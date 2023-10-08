@@ -10,7 +10,7 @@
                             <div class="widget-title">
                                 <h3>About us</h3>
                             </div>
-                            <div class="text-justify">
+                            <div class="text-align-justify">
                                 {!! ucfirst(@$setting_data->website_description ?? '') !!}
                             </div>
                         </div>

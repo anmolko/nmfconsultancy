@@ -1789,8 +1789,7 @@ h6 {
   margin-bottom: 20px;
 }
 .footer-widget--about p {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
   line-height: 26px;
   color: var(--nmf-white, #fff);
   margin-bottom: 25px;
@@ -10624,4 +10623,10 @@ body.boxed-wrapper .page-wrapper {
   background-color: var(--nmf-white, #fff);
   box-shadow: 0px 0px 100px 0px rgba(var(--modins-black-rgb, 28, 26, 29), 0.08);
 }
-/*# sourceMappingURL=modins.css.map */
+
+.text-align-justify{
+    text-align: justify;
+}
+
+
+/*# sourceMappingURL=nmf.css.map */

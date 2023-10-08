@@ -1,10 +1,10 @@
 
 <footer class="main-footer footer-bg main-footer__home">
     <div class="main-footer__shape_1">
-        <img src="assets/images/shapes/footer-shape-1.png" alt="footer shape">
+        <img src="{{asset('assets/frontend/images/shapes/footer-shape-1.png')}}" alt="footer shape">
     </div>
     <div class="main-footer__shape_2">
-        <img src="assets/images/shapes/footer-shape-2.png" alt="footer shape">
+        <img src="{{asset('assets/frontend/images/shapes/footer-shape-2.png')}}" alt="footer shape">
     </div>
     <!-- /.main-footer__bg -->
     <div class="main-footer__top">
@@ -12,91 +12,94 @@
             <div class="row">
                 <div class="col-md-6 col-xl-3">
                     <div class="footer-widget footer-widget--about">
-                        <a href="index.html" class="footer-widget__logo">
-                            <img src="assets/images/logo-light.png" width="155" alt="Modins HTML Template">
+                        <a href="/" class="footer-widget__logo">
+                            <img src="{{$setting_data->logo_white ? asset('/images/settings/'.@$setting_data->logo_white):''}}" width="155" alt="">
                         </a>
-                        <p>Insurance that reflects the way you live your life.</p>
+                        <div class="text-align-justify">
+                            {!! ucfirst(@$setting_data->website_description ?? '') !!}
+                        </div>
                         <!-- /.footer-widget__text -->
                         <div class="footer-widget__social">
-                            <a href="https://twitter.com/">
-                                <i class="fab fa-twitter" aria-hidden="true"></i>
-                                <span class="sr-only">Twitter</span>
-                            </a>
-                            <a href="https://facebook.com/">
-                                <i class="fab fa-facebook" aria-hidden="true"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                            <a href="https://pinterest.com/">
-                                <i class="fab fa-pinterest-p" aria-hidden="true"></i>
-                                <span class="sr-only">Pinterest</span>
-                            </a>
-                            <a href="https://instagram.com/">
-                                <i class="fab fa-instagram" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
-                            </a>
+                            @if(@$setting_data->facebook)
+                                <a href="{{ @$setting_data->facebook }}">
+                                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                            @endif
+                            @if(@$setting_data->youtube)
+                                <a href="{{ @$setting_data->youtube }}">
+                                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                                    <span class="sr-only">Youtuve</span>
+                                </a>
+                            @endif
+                            @if(@$setting_data->instagram)
+                                <a href="{{ @$setting_data->instagram }}">
+                                    <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                            @endif
+                            @if(@$setting_data->linkedin)
+                                <a href="{{ @$setting_data->linkedin }}">
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                    <span class="sr-only">Linkedin</span>
+                                </a>
+                            @endif
+                            @if(!empty(@$setting_data->ticktock))
+                                <a href="{{ @$setting_data->ticktock }}">
+                                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                            @endif
                         </div><!-- /.footer-widget__social -->
                     </div><!-- /.footer-widget -->
                 </div><!-- /.col-md-6 -->
                 <div class="col-md-6 col-xl-3">
                     <div class="footer-widget footer-widget--contact">
                         <h2 class="footer-widget__title">Contact</h2><!-- /.footer-widget__title -->
-                        <p class="footer-widget__text">88 Broklyn Golden Road Street, <br> New York. USA</p>
+                        <p class="footer-widget__text">{{@$setting_data->address ?? ''}}</p>
                         <ul class="list-unstyled footer-widget__info">
-                            <li> <i class="fas fa-phone"></i><a href="tel:+92(8800)-6930">+ 92 ( 8800 ) - 6930</a></li>
-                            <li> <i class="fas fa-envelope "></i><a href="mailto:needhelp@company.com">needhelp@company.com</a></li>
+                            <li> <i class="fas fa-phone"></i><a href="tel: {{@$setting_data->phone ?? $setting_data->mobile ?? ''}}"> {{@$setting_data->phone ?? $setting_data->mobile ?? ''}}</a></li>
+                            <li> <i class="fas fa-envelope "></i><a href="mailto:{{@$setting_data->email ?? ''}}">{{@$setting_data->email ?? ''}}</a></li>
                         </ul><!-- /.list-unstyled -->
                     </div><!-- /.footer-widget -->
                 </div><!-- /.col-md-6 -->
                 <div class="col-md-6 col-xl-3">
-                    <div class="footer-widget footer-widget--gallery">
-                        <h2 class="footer-widget__title">Instagram</h2><!-- /.footer-widget__title -->
-                        <ul class="list-unstyled footer-widget__instagram">
-                            <li>
-                                <a class="img-popup" href="assets/images/gallery/footer-gl-1.jpg">
-                                    <img src="assets/images/gallery/footer-gl-1.jpg" alt="footer-gl">
-                                </a>
-                            </li>
-                            <li>
-                                <a class="img-popup" href="assets/images/gallery/footer-gl-2.jpg">
-                                    <img src="assets/images/gallery/footer-gl-2.jpg" alt="footer-gl">
-                                </a>
-                            </li>
-                            <li>
-                                <a class="img-popup" href="assets/images/gallery/footer-gl-3.jpg">
-                                    <img src="assets/images/gallery/footer-gl-3.jpg" alt="footer-gl">
-                                </a>
-                            </li>
-                            <li>
-                                <a class="img-popup" href="assets/images/gallery/footer-gl-4.jpg">
-                                    <img src="assets/images/gallery/footer-gl-4.jpg" alt="footer-gl">
-                                </a>
-                            </li>
-                            <li>
-                                <a class="img-popup" href="assets/images/gallery/footer-gl-5.jpg">
-                                    <img src="assets/images/gallery/footer-gl-5.jpg" alt="footer-gl">
-                                </a>
-                            </li>
-                            <li>
-                                <a class="img-popup" href="assets/images/gallery/footer-gl-6.jpg">
-                                    <img src="assets/images/gallery/footer-gl-6.jpg" alt="footer-gl">
-                                </a>
-                            </li>
-
-                        </ul><!-- /.list-unstyled -->
-                    </div><!-- /.footer-widget -->
+                    @if($footer_nav_data1!==null)
+                        <div class="footer-widget footer-widget--gallery">
+                            <h2 class="footer-widget__title">{{ $footer_nav_title1 ?? '' }}</h2><!-- /.footer-widget__title -->
+                            <ul class="list-unstyled footer-widget__info">
+                                @foreach(@$footer_nav_data1 as $nav)
+                                    @if(empty(@$nav->children[0]))
+                                        <li>
+                                            <i class="fas fa-arrow-alt-circle-right"></i>
+                                            <a href="{{get_menu_url(@$nav->type, @$nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                                {{ @$nav->name ?? @$nav->title ?? ''}}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div><!-- /.col-md-6 -->
                 <div class="col-md-6 col-xl-3">
-                    <div class="footer-widget footer-widget--time">
-                        <h2 class="footer-widget__title">Newsletter</h2><!-- /.footer-widget__title -->
-                        <p class="footer-widget__text">Subscribe our newsletter to get our latest update & news.</p>
-                        <form action="#" data-url="MAILCHIMP_FORM_URL" class="footer-widget__newsletter mc-form">
-                            <input type="email" name="EMAIL" placeholder="Email address">
-                            <button type="submit" class="fas fa-paper-plane">
-                                <span class="sr-only">submit</span><!-- /.sr-only -->
-                            </button>
-                        </form><!-- /.footer-widget__newsletter mc-form -->
-                        <div class="mc-form__response"></div><!-- /.mc-form__response -->
-                    </div><!-- /.footer-widget -->
+                    @if($footer_nav_data2!==null)
+                        <div class="footer-widget footer-widget--gallery">
+                            <h2 class="footer-widget__title">{{ $footer_nav_title2 ?? '' }}</h2><!-- /.footer-widget__title -->
+                            <ul class="list-unstyled footer-widget__info">
+                                @foreach(@$footer_nav_data2 as $nav)
+                                    @if(empty(@$nav->children[0]))
+                                        <li>
+                                            <i class="fas fa-arrow-alt-circle-right"></i>
+                                            <a href="{{get_menu_url(@$nav->type, @$nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                                {{ @$nav->name ?? @$nav->title ?? ''}}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div><!-- /.col-md-6 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -203,5 +206,7 @@
 <script src="{{ asset('assets/frontend/vendors/ion.rangeSlider/ion.rangeSlider.min.js') }}"></script>
 <!-- template js -->
 <script src="{{asset('assets/frontend/js/nmf.js')}}"></script>
+@yield('js')
+@stack('scripts')
 </body>
 </html>
