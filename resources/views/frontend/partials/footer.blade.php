@@ -108,7 +108,9 @@
         <div class="container">
             <div class="main-footer__bottom__inner">
                 <p class="main-footer__copyright">
-                    &copy; Copyright <span class="dynamic-year"></span> by Modins HTML Template.
+                    Copyright © 2023 <span class="dynamic-year"></span>
+                    <a href="/" class=" font-weight-500">{{$setting_data->website_name ?? 'Hanabi'}}.</a>
+                    by <a href="https://www.canosoft.com.np/" target="_blank">Canosoft Techonology</a> All Rights Reserved.
                 </p>
             </div><!-- /.main-footer__inner -->
         </div><!-- /.container -->
@@ -126,7 +128,7 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png" width="155" alt="" /></a>
+            <a href="/" aria-label="logo image"><img src="{{$setting_data->logo_white ? asset('/images/settings/'.@$setting_data->logo_white):''}}" width="155" alt="" /></a>
         </div>
         <!-- /.logo-box -->
         <div class="mobile-nav__container"></div>
@@ -135,30 +137,44 @@
         <ul class="mobile-nav__contact list-unstyled">
             <li>
                 <i class="fa fa-envelope"></i>
-                <a href="mailto:needhelp@modins.com">needhelp@modins.com</a>
+                <a href="mailto:{{@$setting_data->email ?? ''}}">{{@$setting_data->email ?? ''}}</a>
             </li>
             <li>
                 <i class="fa fa-phone-alt"></i>
-                <a href="tel:666-888-0000">666 888 0000</a>
+                <a href="tel:{{@$setting_data->phone ?? $setting_data->mobile ?? ''}}">{{@$setting_data->phone ?? $setting_data->mobile ?? ''}}</a>
             </li>
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__social">
-            <a href="https://twitter.com/">
-                <i class="fab fa-twitter" aria-hidden="true"></i>
-                <span class="sr-only">Twitter</span>
-            </a>
-            <a href="https://facebook.com/">
-                <i class="fab fa-facebook" aria-hidden="true"></i>
-                <span class="sr-only">Facebook</span>
-            </a>
-            <a href="https://pinterest.com/">
-                <i class="fab fa-pinterest-p" aria-hidden="true"></i>
-                <span class="sr-only">Pinterest</span>
-            </a>
-            <a href="https://instagram.com/">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-                <span class="sr-only">Instagram</span>
-            </a>
+            @if(@$setting_data->facebook)
+                <a href="{{ @$setting_data->facebook }}">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                </a>
+            @endif
+            @if(@$setting_data->youtube)
+                <a href="{{ @$setting_data->youtube }}">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span class="sr-only">Youtuve</span>
+                </a>
+            @endif
+            @if(@$setting_data->instagram)
+                <a href="{{ @$setting_data->instagram }}">
+                    <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+            @endif
+            @if(@$setting_data->linkedin)
+                <a href="{{ @$setting_data->linkedin }}">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span class="sr-only">Linkedin</span>
+                </a>
+            @endif
+            @if(!empty(@$setting_data->ticktock))
+                <a href="{{ @$setting_data->ticktock }}">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+            @endif
         </div><!-- /.mobile-nav__social -->
     </div>
     <!-- /.mobile-nav__content -->
@@ -168,8 +184,10 @@
     <div class="search-popup__overlay search-toggler"></div>
     <!-- /.search-popup__overlay -->
     <div class="search-popup__content">
-        <form role="search" method="get" class="search-popup__form" action="#">
-            <input type="text" id="search" placeholder="Search Here..." />
+        <form method="get" id="searchform" action="{{route('searchJob')}}" role="search" class="search-popup__form">
+            <input type="text" id="s" name="s" placeholder="Search blogs..."
+                   oninvalid="this.setCustomValidity('Type a keyword')"
+                   oninput="this.setCustomValidity('')" required/>
             <button type="submit" aria-label="search submit" class="modins-btn modins-btn--base">
                 <span><i class="icon-magnifying-glass"></i></span>
                 <em></em>
@@ -206,6 +224,8 @@
 <script src="{{ asset('assets/frontend/vendors/ion.rangeSlider/ion.rangeSlider.min.js') }}"></script>
 <!-- template js -->
 <script src="{{asset('assets/frontend/js/nmf.js')}}"></script>
+<script src="{{asset('assets/common/lazyload.js')}}"></script>
+
 @yield('js')
 @stack('scripts')
 </body>

@@ -5,8 +5,8 @@
 @endsection
 @section('content')
     <!-- main-slider-start -->
-    <section class="main-slider-one">
-        <div class="main-slider-one__carousel modins-owl__carousel owl-carousel" data-owl-options='{
+    <section class="main-slider-two">
+        <div class="main-slider-two__carousel modins-owl__carousel owl-carousel" data-owl-options='{
 		"loop": true,
 		"animateOut": "fadeOut",
 		"animateIn": "fadeIn",
@@ -19,84 +19,37 @@
 		"dots": false,
 		"margin": 0
 	    }'>
-            <div class="item">
-                <div class="main-slider-one__item">
-                    <div class="main-slider-one__bg" style="background-image: url(assets/images/backgrounds/slider-1-1.jpg);"></div>
-                    <div class="main-slider-one__shape">
-                        <img src="assets/images/shapes/main-slder-shape-1.png" alt="shape">
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-7">
-                                <div class="main-slider-one__wrap">
-                                    <div class="main-slider-one__content">
-                                        <div class="shape-1">
-                                            <img src="assets/images/shapes/arrow-shape.png" alt="">
+            @foreach(@$sliders as $index=>$slider)
+                <div class="item">
+                    <div class="main-slider-two__item">
+                        <div class="main-slider-one__bg" style="background-image: linear-gradient(90deg, rgb(43 43 94 / 68%) 0%, rgb(43 43 94 / 53%) 35%, rgb(43 43 94 / 63%) 100%),url('{{ asset('/images/sliders/'.$slider->image) }}');"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-7">
+                                    <div class="main-slider-two__wrap">
+                                        <div class="main-slider-two__content">
+                                            <!-- slider-sub-title -->
+                                            <h2 class="main-slider-two__title">{{@$slider->heading}}
+                                            </h2><!-- slider-title -->
+                                            @if($slider->subheading)
+                                                <p class="main-slider-two__info">
+                                                    {{ @$slider->subheading ??''}}
+                                                </p>
+                                            @endif
+                                            @if(@$slider->button)
+                                                <div class="main-slider-two__btn">
+                                                    <a href="{{@$slider->link}}" class="modins-btn modins-btn--base"><span>{{ucwords(@$slider->button)}}
+                                                        </span> <em></em></a><!-- slider-btn -->
+                                                </div>
+                                            @endif
                                         </div>
-                                        <!-- slider-sub-title -->
-                                        <h2 class="main-slider-one__title">Insurance <br>
-                                            for the better <br>
-                                            family life.</h2><!-- slider-title -->
-                                        <p class="main-slider-one__info">
-                                            Phasellus condimentum laoreet turpis, ut tincid sodales <br> in. Integer leo
-                                            arcu,
-                                            mollis sit amet tempor.
-                                        </p>
-                                        <div class="main-slider-one__btn">
-                                            <a href="services.html" class="modins-btn modins-btn--base"><span>Let’s Get
-                                                        Started</span> <em></em></a><!-- slider-btn -->
-                                        </div>
-                                    </div>
-                                    <div class="main-slider-one__social">
-                                        <span><i class="icon-family-1"></i></span>
-                                        <span><i class="icon-car"></i></span>
-                                        <span><i class="icon-home-insurance"></i></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="main-slider-one__item">
-                    <div class="main-slider-one__bg" style="background-image: url(assets/images/backgrounds/slider-1-2.jpg);"></div>
-                    <div class="main-slider-one__shape">
-                        <img src="assets/images/shapes/main-slder-shape-1.png" alt="shape">
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-7">
-                                <div class="main-slider-one__wrap">
-                                    <div class="main-slider-one__content">
-                                        <div class="shape-1">
-                                            <img src="assets/images/shapes/arrow-shape.png" alt="">
-                                        </div>
-                                        <!-- slider-sub-title -->
-                                        <h2 class="main-slider-one__title">Insurance <br>
-                                            for the better <br>
-                                            family life.</h2><!-- slider-title -->
-                                        <p class="main-slider-one__info">
-                                            Phasellus condimentum laoreet turpis, ut tincid sodales <br> in. Integer leo
-                                            arcu,
-                                            mollis sit amet tempor.
-                                        </p>
-                                        <div class="main-slider-one__btn">
-                                            <a href="services.html" class="modins-btn modins-btn--base"><span>Let’s Get
-                                                        Started</span> <em></em></a><!-- slider-btn -->
-                                        </div>
-                                    </div>
-                                    <div class="main-slider-one__social">
-                                        <span><i class="icon-family-1"></i></span>
-                                        <span><i class="icon-car"></i></span>
-                                        <span><i class="icon-home-insurance"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
     <!-- main-slider-end -->
