@@ -250,7 +250,7 @@
 # Common
 --------------------------------------------------------------*/
 body {
-  font-family: var(--modins-font, "Plus Jakarta Sans", sans-serif);
+  font-family: var(--nmf-font, "Plus Jakarta Sans", sans-serif);
   color: var(--nmf-text, #82828a);
   font-size: 16px;
   line-height: 2.125;
@@ -284,7 +284,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--modins-heading-font, "Cormorant", serif);
+  font-family: var(--nmf-heading-font, "Cormorant", serif);
   color: var(--nmf-black, #1c1a1d);
 }
 @media (max-width: 575px) {
@@ -8666,7 +8666,7 @@ body.megamenu-popup-active .mobile-nav__content {
 --------------------------------------------------------------*/
 .about-one-home {
   position: relative;
-  padding: 120px 0;
+  padding: 80px 0;
   overflow: hidden;
   z-index: 1;
 }

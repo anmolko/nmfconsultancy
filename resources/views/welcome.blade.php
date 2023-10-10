@@ -140,143 +140,63 @@
         @endif
     </section><!-- /.about-one-home -->
 
-    <section class="service-one service-home-one pt-120 pb-120" style="background-image: url('assets/images/backgrounds/insurace-bg-1.jpg');">
+    <div class="cta-one cta-one__home mb-5">
+        <div class="feature-two__shape">
+            <img src="{{ asset('assets/frontend/images/shapes/feature-shape-2.png') }}" alt="">
+        </div>
+        <div class="container" style="max-width: 1290px;">
+            <div class="cta-one__inner">
+                <div class="cta-one__headline">
+                    <div class="cta-one__icon">
+                        <i class="icon-folder"></i>
+                    </div>
+                    <div class="cta-one__content">
+                        <span class="cta-one__tagline">Quisque vel ortor</span>
+                        <h3 class="cta-one__title">Start reporting or tracking your claims</h3>
+                    </div>
+                </div>
+                <div class="cta-one__btn">
+                    <a href="contact.html" class="modins-btn modins-btn-white">Track your Claim <em></em></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if(count($latestServices) > 0)
+        <section class="service-one service-home-one pt-120 pb-120" style="background-image: url('{{ asset('assets/frontend/images/backgrounds/insurace-bg-1.jpg')  }}');">
         <div class="container">
             <div class="sec-title">
 
-                <h6 class="sec-title__tagline">what we’re offering</h6><!-- /.sec-title__tagline -->
+                <h6 class="sec-title__tagline">What we’re offering</h6><!-- /.sec-title__tagline -->
 
-                <h3 class="sec-title__title">We’re giving all the insurance <br> services to you</h3><!-- /.sec-title__title -->
+                <h3 class="sec-title__title">We provide great categories<br> for you</h3><!-- /.sec-title__title -->
             </div><!-- /.sec-title -->
             <div class="row gutter-y-30">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
-                        <div class="service-card__image">
-                            <img src="assets/images/service/service-1.png" alt="Car insurance">
-                            <div class="service-card__icon">
-                                <i class="icon-car-1"></i>
-                            </div>
-                        </div><!-- /.service-card__image -->
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">
-                                <a href="car-insurance.html">Car insurance</a>
-                            </h3><!-- /.service-card__title -->
-                            <p class="service-card__info">Lorem ipsum dolor sit amet, sed consectetur adipiscing elit.</p>
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='1ms'>
-                        <div class="service-card__image">
-                            <img src="assets/images/service/service-2.png" alt="Life insurance">
-                            <div class="service-card__icon">
-                                <i class="icon-cardiogram"></i>
-                            </div>
-                        </div><!-- /.service-card__image -->
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">
-                                <a href="%40%40link.html">Life insurance</a>
-                            </h3><!-- /.service-card__title -->
-                            <p class="service-card__info">Lorem ipsum dolor sit amet, sed consectetur adipiscing elit.</p>
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='3ms'>
-                        <div class="service-card__image">
-                            <img src="assets/images/service/service-3.png" alt="Home insurance">
-                            <div class="service-card__icon">
-                                <i class="icon-home"></i>
-                            </div>
-                        </div><!-- /.service-card__image -->
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">
-                                <a href="%40%40link.html">Home insurance</a>
-                            </h3><!-- /.service-card__title -->
-                            <p class="service-card__info">Lorem ipsum dolor sit amet, sed consectetur adipiscing elit.</p>
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='4ms'>
-                        <div class="service-card__image">
-                            <img src="assets/images/service/service-4.png" alt="Health insurance">
-                            <div class="service-card__icon">
-                                <i class="icon-cross"></i>
-                            </div>
-                        </div><!-- /.service-card__image -->
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">
-                                <a href="%40%40link.html">Health insurance</a>
-                            </h3><!-- /.service-card__title -->
-                            <p class="service-card__info">Lorem ipsum dolor sit amet, sed consectetur adipiscing elit.</p>
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='5ms'>
-                        <div class="service-card__image">
-                            <img src="assets/images/service/service-5.png" alt="Business insurance">
-                            <div class="service-card__icon">
-                                <i class="icon-suitcase"></i>
-                            </div>
-                        </div><!-- /.service-card__image -->
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">
-                                <a href="%40%40link.html">Business insurance</a>
-                            </h3><!-- /.service-card__title -->
-                            <p class="service-card__info">Lorem ipsum dolor sit amet, sed consectetur adipiscing elit.</p>
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='6ms'>
-                        <div class="service-card__image">
-                            <img src="assets/images/service/service-6.png" alt="Fire insurance">
-                            <div class="service-card__icon">
-                                <i class="icon-fire"></i>
-                            </div>
-                        </div><!-- /.service-card__image -->
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">
-                                <a href="%40%40link.html">Fire insurance</a>
-                            </h3><!-- /.service-card__title -->
-                            <p class="service-card__info">Lorem ipsum dolor sit amet, sed consectetur adipiscing elit.</p>
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='7ms'>
-                        <div class="service-card__image">
-                            <img src="assets/images/service/service-7.png" alt="Marriage insurance">
-                            <div class="service-card__icon">
-                                <i class="icon-wedding-rings"></i>
-                            </div>
-                        </div><!-- /.service-card__image -->
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">
-                                <a href="%40%40link.html">Marriage insurance</a>
-                            </h3><!-- /.service-card__title -->
-                            <p class="service-card__info">Lorem ipsum dolor sit amet, sed consectetur adipiscing elit.</p>
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.col-md-6 col-lg-3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card service-featured wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="8ms">
-                        <div class="service-card__bg" style="background-image: url('assets/images/resources/service-featured.jpg');"></div>
-                        <div class="service-card__content">
-                            <h3 class="service-card__title">
-                                Compare & get <br> your insuracne in <br> right way
-                            </h3><!-- /.service-card__title -->
-                            <p class="service-card__info">Lorem ipsum dolor sit amet, sed consectetur adipiscing elit.</p>
-                            <a href="contact.html" class="modins-btn">Get a Quote <em></em></a>
-                        </div><!-- /.service-card__content -->
+                @foreach(@$latestServices as $index=>$service)
+                    <div class="col-md-6 col-lg-3">
+                        <div class="portfolio-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
+                            <div class="portfolio-card__image">
+                                <img class="lazy" data-src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="">
+                            </div><!-- /.portfolio-card__image -->
+                            <div class="portfolio-card__content">
+                                <div class="portfolio-card__head">
+                                    <h6 class="portfolio-card__tagline"></h6>
+                                    <h3 class="portfolio-card__title">
+                                        <a href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a>
+                                    </h3><!-- /.portfolio-card__title -->
+                                </div>
+                                <a href="{{route('service.single',$service->slug)}}" class="portfolio-card__link">
+                                    <i class="icon-right-arrow"></i>
+                                </a><!-- /.blog-card__link -->
+                            </div><!-- /.portfolio-card__content -->
+                        </div><!-- /.portfolio-card -->
                     </div>
-                </div><!-- /.col-md-6 col-lg-3 -->
-            </div><!-- /.row -->
+                @endforeach
+            </div>
+
         </div><!-- /.container -->
     </section><!-- /.service-page -->
-
+    @endif
     <section class="testimonials-one testimonials-one--home">
         <div class="testimonials-one__bg">
             <img src="assets/images/shapes/testimonai-one-bg.png" alt="shape">
