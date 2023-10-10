@@ -86,7 +86,7 @@ class HomePageController extends Controller
             $path    = base_path().'/public/images/home/welcome/';
             $image   = $request->file('welcome_image');
             $name1   = uniqid().'_welcome_'.$image->getClientOriginalName();
-            $moved          = Image::make($image->getRealPath())->fit(550, 556)->orientate()->save($path.$name1);
+            $moved          = Image::make($image->getRealPath())->fit(550, 450)->orientate()->save($path.$name1);
             if ($moved){
                 $data['welcome_image']= $name1;
             }

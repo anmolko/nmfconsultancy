@@ -714,7 +714,7 @@ h6 {
 }
 
 .sec-title {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .sec-title__tagline {
   margin: 0;
@@ -8768,8 +8768,8 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .about-one-home__image__arrow {
   position: absolute;
-  top: 0;
-  right: 0;
+top: -21px;
+right: -27px;
   z-index: -2;
   animation: shapeMover infinite 62s;
 }
@@ -8827,7 +8827,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .about-one-home__content__text-two {
   line-height: 30px;
-  margin: 0 0 42px;
+  margin: 0 0 20px;
 }
 .about-one-home__content__author-wrapper {
   display: flex;

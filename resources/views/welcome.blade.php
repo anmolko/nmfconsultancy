@@ -52,118 +52,92 @@
             @endforeach
         </div>
     </section>
-    <!-- main-slider-end -->
+
     <section class="about-one-home">
-        <div class="about-one-home__shape">
-            <img src="assets/images/shapes/about-shape-1-3.png" alt="">
-        </div>
-        <!-- Feature Start -->
-        <section class="feature-one">
-            <div class="container-fluid ">
-                <div class="row gutter-y-30">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="feature-one__item">
-                            <div class="feature-one__item__icon"><span class="icon-save-money"></span></div>
-                            <div class="feature-one__item__content">
-                                <h3 class="feature-one__item__title">Safe your money</h3>
-                                <p class="feature-one__item__text">Lorem ipsum dolor amet consectetur adipiscing elit do
-                                    eiusmod tempor <br> incid idunt ut labore.</p>
-                            </div>
-                        </div><!-- feature-item -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="feature-one__item">
-                            <div class="feature-one__item__icon"><span class="icon-online-registration"></span></div>
-                            <div class="feature-one__item__content">
-                                <h3 class="feature-one__item__title">Get a free quote</h3>
-                                <p class="feature-one__item__text">Lorem ipsum dolor amet consectetur adipiscing elit do
-                                    eiusmod tempor <br> incid idunt ut labore.</p>
-                            </div>
-                        </div><!-- feature-item -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="feature-one__item">
-                            <div class="feature-one__item__icon"><span class="icon-guarantee"></span></div>
-                            <div class="feature-one__item__content">
-                                <h3 class="feature-one__item__title">Fast & reliable</h3>
-                                <p class="feature-one__item__text">Lorem ipsum dolor amet consectetur adipiscing elit do
-                                    eiusmod tempor <br> incid idunt ut labore.</p>
-                            </div>
-                        </div><!-- feature-item -->
+        @if($homepage_info->mission || $homepage_info->vision ||  $homepage_info->value)
+
+            <div class="about-one-home__shape">
+                <img class="lazy" data-src="{{asset('assets/frontend/images/shapes/about-shape-1-3.png')}}" alt="">
+            </div>
+            <!-- Feature Start -->
+            <section class="feature-one">
+                <div class="container-fluid ">
+                    <div class="row gutter-y-30">
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch wow fadeInUp" data-wow-delay="100ms">
+                            <div class="feature-one__item">
+                                <div class="feature-one__item__icon"><span class="icon-success"></span></div>
+                                <div class="feature-one__item__content">
+                                    <h3 class="feature-one__item__title">Our Mission</h3>
+                                    <p class="feature-one__item__text">{{ ucfirst(@$homepage_info->mission) }}</p>
+                                </div>
+                            </div><!-- feature-item -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch wow fadeInUp" data-wow-delay="100ms">
+                            <div class="feature-one__item">
+                                <div class="feature-one__item__icon"><span class="icon-online-registration"></span></div>
+                                <div class="feature-one__item__content">
+                                    <h3 class="feature-one__item__title">Our Vision</h3>
+                                    <p class="feature-one__item__text">{{ ucfirst(@$homepage_info->vision) }}</p>
+                                </div>
+                            </div><!-- feature-item -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch wow fadeInUp" data-wow-delay="100ms">
+                            <div class="feature-one__item">
+                                <div class="feature-one__item__icon"><span class="icon-guarantee"></span></div>
+                                <div class="feature-one__item__content">
+                                    <h3 class="feature-one__item__title">Our Goal</h3>
+                                    <p class="feature-one__item__text">{{ ucfirst(@$homepage_info->value) }}</p>
+                                </div>
+                            </div><!-- feature-item -->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Feature End -->
+            </section>
+            <!-- Feature End -->
+        @endif
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-one-home__image wow fadeInLeft" data-wow-delay="300ms">
-                        <div class="about-one-home__double-image">
-                            <div class="img-1">
-                                <img src="assets/images/resources/about-1-1.png" alt="modins">
-                            </div>
-                            <div class="img-2">
-                                <img src="assets/images/resources/about-1-2.png" alt="modins">
-                            </div>
-
-                            <div class="about-one-home__image__arrow"><img src="assets/images/shapes/about-shape-1-2.png" alt="modins">
-                            </div>
-                            <div class="about-one-home__image__counter count-box">
-                                <h3 class="about-one-home__image__count count-text" data-stop="30" data-speed="1500"></h3>
-                                <p class="about-one-home__image__text">Years <br>
-                                    of experience</p>
-                            </div>
-                        </div>
-
-
-                    </div><!-- /.why-choose-two__image -->
-                </div><!-- /.col-lg-6 -->
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="300ms">
-                    <div class="about-one-home__content">
-                        <div class="sec-title">
-
-                            <h6 class="sec-title__tagline">About company</h6><!-- /.sec-title__tagline -->
-
-                            <h3 class="sec-title__title">Providing the best insurance policy to customers</h3><!-- /.sec-title__title -->
-                        </div><!-- /.sec-title -->
-                        <p class="about-one-home__content__text-two">
-                            Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor incididunt labore dolore
-                            magna aliquaenim ad minim. Sed risus commodo ornare felis non, eleifend molestie metus pharetra
-                            eleifend.
-                        </p>
-                        <div class="about-one-home__content__wrapper">
-                            <div>
-                                <ul class="about-one-home__content__list">
-                                    <li><span class="fas fa-check-circle"></span>Large number of insurance policies</li>
-                                    <li><span class="fas fa-check-circle"></span>Experience & qualified agents</li>
-                                    <li><span class="fas fa-check-circle"></span>Free insurance quotes</li>
-                                </ul>
-                                <a href="about.html" class="modins-btn modins-btn--base"><span>Discover more</span>
-                                    <em></em></a>
-                            </div>
-                            <div class="about-one-home__content__counter-wrapper">
-
-                                <div class="about-one-home__content__counter">
-                                    <div class="shape-1">
-                                        <img src="assets/images/shapes/about-shape-1.png" alt="">
-                                    </div>
-                                    <div class="about-one-home__content__icon count-box">
-                                        <i class="icon-guarantee"></i>
-                                        <div class="about-one-home__content__couter__head">
-                                            <span>+</span><span class="about-one-home__content__count count-text" data-stop="38" data-speed="1500"></span>
-                                        </div>
-
-                                    </div>
-                                    <p class="about-one-home__content__text">Wonderful awards</p>
+        @if($homepage_info->welcome_description)
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-one-home__image wow fadeInLeft" data-wow-delay="300ms">
+                            <div class="about-one-home__double-image">
+                                <div class="img-1">
+                                    <img class="lazy" data-src="{{ @$homepage_info->welcome_image ? asset('/images/home/welcome/'.@$homepage_info->welcome_image):''}}"  />
+                                </div>
+                                <div class="about-one-home__image__arrow">
+                                    <img src="{{ asset('assets/frontend/images/shapes/about-shape-1-2.png') }}" />
                                 </div>
                             </div>
-                        </div>
-                    </div><!-- /.why-choose-two__content -->
-                </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
+
+
+                        </div><!-- /.why-choose-two__image -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="300ms">
+                        <div class="about-one-home__content">
+                            <div class="sec-title">
+
+                                <h6 class="sec-title__tagline">{{$homepage_info->welcome_subheading ?? ''}}</h6><!-- /.sec-title__tagline -->
+
+                                <h3 class="sec-title__title">{{  @$homepage_info->welcome_heading }}</h3><!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                            <p class="about-one-home__content__text-two text-align-justify">
+                                {{ ucfirst(@$homepage_info->welcome_description) }}
+                            </p>
+                            @if(@$homepage_info->welcome_link)
+                                <div class="about-one-home__content__wrapper">
+                                    <div>
+                                        <a href="{{@$homepage_info->welcome_link}}"
+                                           class="modins-btn modins-btn--base"><span>{{ @$homepage_info->welcome_button }}</span>
+                                            <em></em></a>
+                                    </div>
+                                </div>
+                            @endif
+                        </div><!-- /.why-choose-two__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div>
+            </div>
+        @endif
     </section><!-- /.about-one-home -->
 
     <section class="service-one service-home-one pt-120 pb-120" style="background-image: url('assets/images/backgrounds/insurace-bg-1.jpg');">
