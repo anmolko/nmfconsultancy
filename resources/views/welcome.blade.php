@@ -151,12 +151,12 @@
                         <i class="icon-folder"></i>
                     </div>
                     <div class="cta-one__content">
-                        <span class="cta-one__tagline">Quisque vel ortor</span>
-                        <h3 class="cta-one__title">Start reporting or tracking your claims</h3>
+                        <span class="cta-one__tagline">{{ $homepage_info->action_heading2 ?? '' }}</span>
+                        <h3 class="cta-one__title">{{ $homepage_info->action_heading ?? '' }}</h3>
                     </div>
                 </div>
                 <div class="cta-one__btn">
-                    <a href="contact.html" class="modins-btn modins-btn-white">Track your Claim <em></em></a>
+                    <a href="{{ $homepage_info->action_link2 ?? '/contact-us'}}" class="modins-btn modins-btn-white">{{ $homepage_info->action_link ?? 'Discover More'}} <em></em></a>
                 </div>
             </div>
         </div>
