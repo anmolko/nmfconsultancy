@@ -450,7 +450,7 @@
 
                 <div class="row gutter-y-30 pt-40">
                     @foreach(@$recruitments as $index=>$recruitment)
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
                             <div class="feature-three__item">
                                 <div class="feature-three__top">
                                     <div class="feature-three__counter">{{ $index + 1 }}</div>
@@ -458,7 +458,7 @@
                                         <i class="{{ recruitment_process_icons($index) }}"></i>
                                     </div>
                                 </div>
-                                <div class="feature-three__content h-100">
+                                <div class="feature-three__content h-75">
                                     <h3 class="feature-three__title">{{@$recruitment->title}}</h3>
                                     <p class="feature-three__info">{{ $recruitment->icon_description ?? '' }}</p>
                                 </div>

@@ -23,8 +23,8 @@
         }
 
         .btn-filter.active{
-            color: var(--base-white);
-            background-color: var(--base-skin);
+            color: var(--nmf-white);
+            background-color: var(--nmf-primary);
         }
         .scale-anm img{
             -webkit-transition: all 300ms ease;
@@ -34,63 +34,45 @@
             padding: 15px;
         }
     </style>
-{{--    <link rel="stylesheet" href="{{asset('assets/frontend/css/plugins/lightbox.css')}}">--}}
 @endsection
 @section('content')
 
 
-    <div class="prt-titlebar-wrapper prt-bg">
-        <div class="prt-titlebar-wrapper-bg-layer prt-bg-layer"></div>
-        <div class="prt-titlebar-wrapper-inner">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="prt-page-title-row-heading">
-                            <div class="page-title-heading">
-                                <h2 class="title">Our Clients</h2>
-                            </div>
-                            <div class="breadcrumb-wrapper">
-                                <i class="flaticon-home"></i>
-                                <span>
-                                        <a title="Homepage" href="/">Home</a>
-                                    </span>
-                                <div class="prt-sep"> - </div>
-                                <span>Our Clients</span>
+    <section class="page-header">
+        <div class="page-header__bg"></div>
+        <div class="container">
+            <h2 class="page-header__title">Our Clients</h2>
+            <ul class="modins-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li><span>Our Clients</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="portfolio-one portfolio-page">
+        <div class="container">
+            <div class="row gutter-y-30">
+                <div id="filters" class="toolbar mb2 mt2">
+                    <button class="btn-filter fil-cat filter active"  data-filter="all">All</button>
+                    @foreach($country as $index=>$cn)
+                        <button class="btn-filter fil-cat filter" data-rel="{{$index}}" data-filter=".{{$index}}">{{ ucfirst($cn) }}</button>
+                    @endforeach
+                </div>
+            </div>
+            <div id="portfolio" class="row">
+                @foreach($clients as $client)
+                    <div class="col-md-6 col-lg-4 tile scale-anm {{$client->country}}">
+                        <div class="portfolio-card wow">
+                            <div class="portfolio-card__image">
+                                <img src="{{asset('/images/clients/'.@$client->image)}}" alt="">
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+            </div>
             </div>
         </div>
-    </div>
-
-    <div class="site-main">
-
-        <!--services-section-->
-        <section class="prt-row service01-services-section clearfix" style="padding: 90px 0 90px;">
-            <div class="prt-row-wrapper-bg-layer prt-bg-layer"></div>
-            <div class="container">
-                <div class="product-discription">
-                    <div class="tabs-box">
-                        <div id="filters" class="toolbar mb2 mt2">
-                            <button class="btn-filter fil-cat filter active"  data-filter="all">All</button>
-                            @foreach($country as $index=>$cn)
-                                <button class="btn-filter fil-cat filter" data-rel="{{$index}}" data-filter=".{{$index}}">{{ ucfirst($cn) }}</button>
-                            @endforeach
-                        </div>
-                        <div id="portfolio"  class="row">
-                            @foreach($clients as $client)
-                                <div class="mt-4 col-lg-3 col-md-3 tile scale-anm {{$client->country}}">
-                                        <a href="#"><img class="img-fluid" src="{{asset('/images/clients/'.@$client->image)}}" alt=""></a>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
+    </section>
 @endsection
 @section('js')
     <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
