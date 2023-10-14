@@ -234,23 +234,23 @@ if (!function_exists('recruitment_process_icons')) {
     {
         $icon   = '';
         if($index == 0){
-            $icon = 'flaticon-interview-1';
+            $icon = 'icon-self-service';
         }else if($index == 1){
-            $icon = 'flaticon-form';
+            $icon = 'icon-insurance';
         }else if($index == 2){
-            $icon = 'flaticon-documents';
+            $icon = 'icon-agreement';
         }else if($index == 3){
-            $icon = 'flaticon-visa-3';
+            $icon = 'icon-family';
         }else if($index == 4){
-            $icon = 'flaticon-travel-2';
+            $icon = 'icon-meeting';
         }else if($index == 5){
-            $icon = 'flaticon-approved';
+            $icon = 'icon-life-insurance';
         }else if($index == 6){
-            $icon = 'flaticon-ticket-1';
+            $icon = 'icon-guarantee';
         }else if($index == 7){
-            $icon = 'flaticon-itinerary';
+            $icon = 'icon-save-money';
         }else{
-            $icon = 'flaticon-briefcase';
+            $icon = 'icon-team';
         }
 
         return $icon;

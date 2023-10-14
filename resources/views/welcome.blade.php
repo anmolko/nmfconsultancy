@@ -200,13 +200,13 @@
 
 
     @if(count($latestcourses) > 0)
-        <section class="service-one service-home-one pt-120 pb-120" style="background-image: url('{{asset('assets/frontend/images/backgrounds/insurace-bg-1.jpg')}}');">
+        <section class="service-one service-home-one pt-120 pb-0">
             <div class="container">
                 <div class="sec-title">
                     <h6 class="sec-title__tagline">Start your journey</h6>
-                    <h3 class="sec-title__title">Study with our <br> amazing programme</h3>
+                    <h3 class="sec-title__title">Study with our amazing <br> programme</h3>
                 </div>
-                <div class="row gutter-y-30">
+                <div class="row gutter-y-30 pt-20">
                     @foreach(@$latestcourses as $index=>$latest)
                         <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
                             <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
@@ -350,7 +350,7 @@
 
                         <h6 class="sec-title__tagline">Trainings and tests</h6>
 
-                        <h3 class="sec-title__title">et the best trainings <br> you deserve</h3>
+                        <h3 class="sec-title__title">Get the best trainings <br> you deserve</h3>
                     </div><!-- /.sec-title -->
                     <div class="blog-three__btn">
                         <a href="{{ route('test-preparation.list') }}" class="modins-btn">View All Tests <em></em></a>
@@ -375,157 +375,22 @@
         </div>
     @endif
 
-    <section class="testimonials-one testimonials-one--home">
-        <div class="testimonials-one__bg">
-            <img src="assets/images/shapes/testimonai-one-bg.png" alt="shape">
-        </div>
-        <div class="testimonials-one__avatas">
-            <div class="avata-1">
-                <img src="assets/images/resources/avata-autor-shape-1.png" alt="">
-            </div>
-            <div class="avata-2">
-                <img src="assets/images/resources/avata-autor-shape-2.png" alt="">
-            </div>
-            <div class="avata-3">
-                <img src="assets/images/resources/avata-autor-shape-3.png" alt="">
-            </div>
-            <div class="avata-4">
-                <img src="assets/images/resources/avata-autor-shape-4.png" alt="">
-            </div>
-            <div class="avata-5">
-                <img src="assets/images/resources/avata-autor-shape-5.png" alt="">
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="sec-title">
-
-                        <h6 class="sec-title__tagline">About company</h6><!-- /.sec-title__tagline -->
-
-                        <h3 class="sec-title__title">What they’re talking <br> about us?</h3><!-- /.sec-title__title -->
-                    </div><!-- /.sec-title -->
-                    <p class="testimonials-one--home">There are many variations of passages the majority have <br> suffered
-                        alteration in some fo injected humour, or <br> randomised words believable.</p>
-                    <div class="testimonials-one__dots"></div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="testimonials-one__carousel modins-owl__carousel modins-owl__carousel--with-shadow modins-owl__carousel--basic-nav owl-carousel" data-owl-options='{
-                "items": 1,
-                "margin": 0,
-                "loop": false,
-                "smartSpeed": 700,
-                "nav": false,
-                "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-                "dots": true,
-                "dotsContainer": ".testimonials-one__dots",
-                "autoplay": false
-            }'>
-                        <div class="item">
-                            <div class="testimonials-one__card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                                <div class="testimonials-one__inner">
-                                    <div class="testimonials-one__top">
-                                        <div class="testimonials-one__top__left">
-                                            <div class="shape-one"><img src="assets/images/shapes/testi-shape-1-1.png" alt="shape"></div>
-                                            <div class="testimonials-one__rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div><!-- /.testimonials-one__rating -->
-                                            <div class="testimonials-one__content">
-                                                Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy data foster to collaborative thinking.
-                                            </div><!-- /.testimonials-one__content -->
-                                        </div><!-- /.testimonials-one__top__left -->
-                                        <div class="testimonials-one__image">
-                                            <img class="avata" src="assets/images/resources/testi-1-1.jpg" alt="Kevin martin">
-                                            <div class="testimonials-one__avata">
-                                                <h3 class="testimonials-one__name">
-                                                    Kevin martin
-                                                </h3><!-- /.testimonials-one__name -->
-                                                <p class="testimonials-one__designation">Co Founder</p>
-                                            </div>
-                                        </div><!-- /.testimonials-one__image -->
-                                    </div><!-- /.testimonials-one__top -->
-                                </div><!-- /.testimonials-one__inner -->
-                            </div><!-- /.testimonials-one -->
-                        </div><!-- /.item -->
-                        <div class="item">
-                            <div class="testimonials-one__card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                                <div class="testimonials-one__inner">
-                                    <div class="testimonials-one__top">
-                                        <div class="testimonials-one__top__left">
-                                            <div class="shape-one"><img src="assets/images/shapes/testi-shape-1-1.png" alt="shape"></div>
-                                            <div class="testimonials-one__rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div><!-- /.testimonials-one__rating -->
-                                            <div class="testimonials-one__content">
-                                                Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy data foster to collaborative thinking.
-                                            </div><!-- /.testimonials-one__content -->
-                                        </div><!-- /.testimonials-one__top__left -->
-                                        <div class="testimonials-one__image">
-                                            <img class="avata" src="assets/images/resources/testi-1-2.jpg" alt="Sarah albert">
-                                            <div class="testimonials-one__avata">
-                                                <h3 class="testimonials-one__name">
-                                                    Sarah albert
-                                                </h3><!-- /.testimonials-one__name -->
-                                                <p class="testimonials-one__designation">Co Founder</p>
-                                            </div>
-                                        </div><!-- /.testimonials-one__image -->
-                                    </div><!-- /.testimonials-one__top -->
-                                </div><!-- /.testimonials-one__inner -->
-                            </div><!-- /.testimonials-one -->
-                        </div><!-- /.item -->
-                        <div class="item">
-                            <div class="testimonials-one__card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                                <div class="testimonials-one__inner">
-                                    <div class="testimonials-one__top">
-                                        <div class="testimonials-one__top__left">
-                                            <div class="shape-one"><img src="assets/images/shapes/testi-shape-1-1.png" alt="shape"></div>
-                                            <div class="testimonials-one__rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div><!-- /.testimonials-one__rating -->
-                                            <div class="testimonials-one__content">
-                                                Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy data foster to collaborative thinking.
-                                            </div><!-- /.testimonials-one__content -->
-                                        </div><!-- /.testimonials-one__top__left -->
-                                        <div class="testimonials-one__image">
-                                            <img class="avata" src="assets/images/resources/testi-1-1.jpg" alt="Sarah albert">
-                                            <div class="testimonials-one__avata">
-                                                <h3 class="testimonials-one__name">
-                                                    Sarah albert
-                                                </h3><!-- /.testimonials-one__name -->
-                                                <p class="testimonials-one__designation">Co Founder</p>
-                                            </div>
-                                        </div><!-- /.testimonials-one__image -->
-                                    </div><!-- /.testimonials-one__top -->
-                                </div><!-- /.testimonials-one__inner -->
-                            </div><!-- /.testimonials-one -->
-                        </div><!-- /.item -->
-                    </div><!-- /.testimonials-one__carousel -->
-                </div>
-            </div>
-        </div><!-- /.container -->
-    </section><!-- /.testimonials-one -->
-
-    <div class="client-carousel client-carousel-one ">
+    @if(count($clients) > 0)
+        <div class="client-carousel client-carousel-one">
         <div class="client-carousel__shape-1">
-            <img src="assets/images/shapes/line-shape-1.png" alt="shape-1">
+            <img src="{{ asset('assets/frontend/images/shapes/line-shape-1.png') }}" alt="shape-1">
         </div>
         <div class="client-carousel__shape-2">
-            <img src="assets/images/shapes/line-shape-2.png" alt="shape-2">
+            <img src="{{ asset('assets/frontend/images/shapes/line-shape-2.png') }}" alt="shape-2">
         </div>
 
-        <div class="container">
+        <div class="container portfolio-one__home" style="padding-top: 0px">
+            <div class="sec-title">
+
+                <h6 class="sec-title__tagline">Our affiliation</h6><!-- /.sec-title__tagline -->
+
+                <h3 class="sec-title__title">Institutions We Proudly <br> Represent</h3><!-- /.sec-title__title -->
+            </div>
             <div class="client-carousel__one modins-owl__carousel owl-theme owl-carousel" data-owl-options='{
                 "items": 5,
                 "margin":10,
@@ -561,467 +426,94 @@
                     }
                 }
                 }'>
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="modins">
-                </div><!-- /.owl-slide-item-->
-            </div><!-- /.thm-owl__slider -->
-        </div><!-- /.container -->
-    </div><!-- /.client-carousel -->
-
-    <div class="contact-one" style="background-image: url('assets/images/backgrounds/contact-one-bg.jpg');">
-        <div class="contact-one__img">
-            <img src="assets/images/resources/contact-left-img.png" alt="shape">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="get-insurance__right">
-                        <div class="section-title text-left">
-                            <div class="sec-title">
-
-                                <h6 class="sec-title__tagline">free quote</h6><!-- /.sec-title__tagline -->
-
-                                <h3 class="sec-title__title">Get an insurance quote <br> to get started</h3><!-- /.sec-title__title -->
-                            </div><!-- /.sec-title -->
+                    @foreach($clients as $client)
+                        <div class="client-carousel__one__item">
+                            <a href="{{ $client->link ?? '#' }}" target="{{ ($client->link !== null) ? '_blank':'' }}">
+                                <img src="{{asset('/images/clients/'.@$client->image)}}"  alt="">
+                            </a>
                         </div>
-                        <div class="get-insurance__tab">
-                            <div class="get-insurance__tab-box tabs-box">
-                                <ul class="tab-buttons clearfix list-unstyled">
-                                    <li data-tab="#home2" class="tab-btn active-btn"><span>Home</span></li>
-                                    <li data-tab="#vehicles" class="tab-btn"><span>Vehicles</span></li>
-                                    <li data-tab="#life" class="tab-btn"><span>Life</span></li>
-                                    <li data-tab="#business" class="tab-btn"><span>Business</span></li>
-                                </ul>
-                                <div class="tabs-content">
-                                    <!--tab-->
-                                    <div class="tab active-tab" id="home2">
-                                        <div class="get-insurance__content">
-                                            <form class="get-insurance__form">
-                                                <div class="get-insurance__content-box">
-                                                    <div class="get-insurance__input-box">
-                                                        <input type="text" placeholder="Full name" name="name">
-                                                    </div>
-                                                    <div class="get-insurance__input-box">
-                                                        <input type="email" placeholder="Email address" name="email">
-                                                    </div>
-                                                    <div class="get-insurance__input-box">
-                                                        <select class="selectpicker" aria-label="Default select example">
-                                                            <option selected>Select service</option>
-                                                            <option value="1">service One</option>
-                                                            <option value="2">service Two</option>
-                                                            <option value="3">service Three</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="get-insurance__progress">
-                                                    <div class="get-insurance__progress-single">
-                                                        <h4 class="get-insurance__progress-title">Limits of Balance:
-                                                        </h4>
-                                                        <div class="get-insurance__progress-range">
-                                                            <input type="text" class="balance-range-slider" data-hide-min-max="true" data-step="100" data-from="35000" data-min="0" data-max="90000" value="" />
-                                                            <div class="get-insurance__balance-box">
-                                                                <p class="get-insurance__balance">$<span></span></p>
-                                                            </div>
-                                                            <input type="hidden" class="get-insurance__balance__input">
-                                                        </div><!-- /.get-insurance__progress-range -->
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="modins-btn">Get a Quote<em></em></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!--tab-->
-                                    <div class="tab" id="vehicles">
-                                        <div class="get-insurance__content">
-                                            <form class="get-insurance__form">
-                                                <div class="get-insurance__content-box">
-                                                    <div class="get-insurance__input-box">
-                                                        <input type="text" placeholder="Full name" name="name">
-                                                    </div>
-                                                    <div class="get-insurance__input-box">
-                                                        <input type="email" placeholder="Email address" name="email">
-                                                    </div>
-                                                    <div class="get-insurance__input-box">
-                                                        <select class="selectpicker" aria-label="Default select example">
-                                                            <option selected>Select service</option>
-                                                            <option value="1">service One</option>
-                                                            <option value="2">service Two</option>
-                                                            <option value="3">service Three</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="get-insurance__progress">
-                                                    <div class="get-insurance__progress-single">
-                                                        <h4 class="get-insurance__progress-title">Limits of Balance:
-                                                        </h4>
-                                                        <div class="get-insurance__progress-range">
-                                                            <input type="text" class="balance-range-slider" data-hide-min-max="true" data-step="100" data-from="35000" data-min="0" data-max="90000" value="" />
-                                                            <div class="get-insurance__balance-box">
-                                                                <p class="get-insurance__balance">$<span></span></p>
-                                                            </div>
-                                                            <input type="hidden" class="get-insurance__balance__input">
-                                                        </div><!-- /.get-insurance__progress-range -->
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="modins-btn">Get a Quote<em></em></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!--tab-->
-                                    <div class="tab" id="life">
-                                        <div class="get-insurance__content">
-                                            <form class="get-insurance__form">
-                                                <div class="get-insurance__content-box">
-                                                    <div class="get-insurance__input-box">
-                                                        <input type="text" placeholder="Full name" name="name">
-                                                    </div>
-                                                    <div class="get-insurance__input-box">
-                                                        <input type="email" placeholder="Email address" name="email">
-                                                    </div>
-                                                    <div class="get-insurance__input-box">
-                                                        <select class="selectpicker" aria-label="Default select example">
-                                                            <option selected>Select service</option>
-                                                            <option value="1">service One</option>
-                                                            <option value="2">service Two</option>
-                                                            <option value="3">service Three</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="get-insurance__progress">
-                                                    <div class="get-insurance__progress-single">
-                                                        <h4 class="get-insurance__progress-title">Limits of Balance:
-                                                        </h4>
-                                                        <div class="get-insurance__progress-range">
-                                                            <input type="text" class="balance-range-slider" data-hide-min-max="true" data-step="100" data-from="35000" data-min="0" data-max="90000" value="" />
-                                                            <div class="get-insurance__balance-box">
-                                                                <p class="get-insurance__balance">$<span></span></p>
-                                                            </div>
-                                                            <input type="hidden" class="get-insurance__balance__input">
-                                                        </div><!-- /.get-insurance__progress-range -->
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="modins-btn">Get a Quote<em></em></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!--tab-->
-                                    <div class="tab" id="business">
-                                        <div class="get-insurance__content">
-                                            <form class="get-insurance__form">
-                                                <div class="get-insurance__content-box">
-                                                    <div class="get-insurance__input-box">
-                                                        <input type="text" placeholder="Full name" name="name">
-                                                    </div>
-                                                    <div class="get-insurance__input-box">
-                                                        <input type="email" placeholder="Email address" name="email">
-                                                    </div>
-                                                    <div class="get-insurance__input-box">
-                                                        <select class="selectpicker" aria-label="Default select example">
-                                                            <option selected>Select service</option>
-                                                            <option value="1">service One</option>
-                                                            <option value="2">service Two</option>
-                                                            <option value="3">service Three</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="get-insurance__progress">
-                                                    <div class="get-insurance__progress-single">
-                                                        <h4 class="get-insurance__progress-title">Limits of Balance:
-                                                        </h4>
-                                                        <div class="get-insurance__progress-range">
-                                                            <input type="text" class="balance-range-slider" data-hide-min-max="true" data-step="100" data-from="35000" data-min="0" data-max="90000" value="" />
-                                                            <div class="get-insurance__balance-box">
-                                                                <p class="get-insurance__balance">$<span></span></p>
-                                                            </div>
-                                                            <input type="hidden" class="get-insurance__balance__input">
-                                                        </div><!-- /.get-insurance__progress-range -->
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="modins-btn">Get a Quote<em></em></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
             </div>
         </div>
     </div>
+    @endif
 
-    <section class="funfact-one" style="background-image: url('{{ asset('assets/frontend/images/shapes/funfact-shape.png') }}');">
-        <div class="container">
-            <div class="list-unstyled funfact-one__list">
-                <div class="row gutter-y-40">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="funfact-one__item count-box">
-                            <i class="icon-insurance"></i><!-- /.funfact-one__icon -->
-                            <div class="funfact-one__content">
-                                <div class="funfact-one__wrap">
-                                    <h3 class="funfact-one__count count-text" data-stop="3.6" data-speed="1500"></h3>
-                                    <h3 class="funfact-one__count count-before">k</h3>
+    @if(@$recruitments[0]->heading)
+        <div class="feature-three" style="background-color:  #f4f3f8;">
+            <div class="container">
+                <div class="sec-title">
+
+                    <h6 class="sec-title__tagline">Our working process</h6><!-- /.sec-title__tagline -->
+
+                    <h3 class="sec-title__title">Easy steps to get the<br>best results</h3><!-- /.sec-title__title -->
+                </div><!-- /.sec-title -->
+
+                <div class="row gutter-y-30 pt-40">
+                    @foreach(@$recruitments as $index=>$recruitment)
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-three__item">
+                                <div class="feature-three__top">
+                                    <div class="feature-three__counter">{{ $index + 1 }}</div>
+                                    <div class="feature-three__icon">
+                                        <i class="{{ recruitment_process_icons($index) }}"></i>
+                                    </div>
                                 </div>
-                                <!-- /.funfact-one__count -->
-                                <p class="funfact-one__text">Gave insurances</p><!-- /.funfact-one__text -->
-                            </div><!-- /.funfact-one__content -->
-                        </div><!-- /.funfact-one__item -->
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="funfact-one__item count-box">
-                            <i class="icon-group"></i><!-- /.funfact-one__icon -->
-                            <div class="funfact-one__content">
-                                <div class="funfact-one__wrap">
-                                    <h3 class="funfact-one__count count-text" data-stop="90" data-speed="1500"></h3>
-                                    <h3 class="funfact-one__count count-before">+</h3>
+                                <div class="feature-three__content h-100">
+                                    <h3 class="feature-three__title">{{@$recruitment->title}}</h3>
+                                    <p class="feature-three__info">{{ $recruitment->icon_description ?? '' }}</p>
                                 </div>
-                                <!-- /.funfact-one__count -->
-                                <p class="funfact-one__text">Professional team</p><!-- /.funfact-one__text -->
-                            </div><!-- /.funfact-one__content -->
-                        </div><!-- /.funfact-one__item -->
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="funfact-one__item count-box">
-                            <i class="icon-life-insurance"></i><!-- /.funfact-one__icon -->
-                            <div class="funfact-one__content">
-                                <div class="funfact-one__wrap">
-                                    <h3 class="funfact-one__count count-text" data-stop="4.9" data-speed="1500"></h3>
-                                    <h3 class="funfact-one__count count-before">k</h3>
-                                </div>
-                                <!-- /.funfact-one__count -->
-                                <p class="funfact-one__text">Satisfied customers</p><!-- /.funfact-one__text -->
-                            </div><!-- /.funfact-one__content -->
-                        </div><!-- /.funfact-one__item -->
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="funfact-one__item count-box">
-                            <i class="icon-success"></i><!-- /.funfact-one__icon -->
-                            <div class="funfact-one__content">
-                                <div class="funfact-one__wrap">
-                                    <h3 class="funfact-one__count count-text" data-stop="98" data-speed="1500"></h3>
-                                    <h3 class="funfact-one__count count-before">%</h3>
-                                </div>
-                                <!-- /.funfact-one__count -->
-                                <p class="funfact-one__text">Success rates</p><!-- /.funfact-one__text -->
-                            </div><!-- /.funfact-one__content -->
-                        </div><!-- /.funfact-one__item -->
-                    </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-            </div><!-- /.list-unstyled funfact-one__list -->
-        </div><!-- /.container -->
-    </section><!-- /.funfact-one -->
+            </div>
+        </div>
+    @endif
 
-    <section class="portfolio-one portfolio-one__home">
-        <div class="container-fluid">
-            <div class="sec-title">
+    @if(count($latestPosts) > 0)
+        <section class="blog-one blog-one--home">
+            <div class="container">
+                <div class="sec-title">
 
-                <h6 class="sec-title__tagline">recent portfolio</h6><!-- /.sec-title__tagline -->
+                    <h6 class="sec-title__tagline">Recent News Feed</h6><!-- /.sec-title__tagline -->
 
-                <h3 class="sec-title__title">Checkout our recently <br> completed work</h3><!-- /.sec-title__title -->
-            </div><!-- /.sec-title -->
-            <div class="row gutter-y-30">
-                <div class="col-md-6 col-lg-3">
-                    <div class="portfolio-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
-                        <div class="portfolio-card__image">
-                            <img src="assets/images/protfolio/portfolio-1.jpg" alt="Insurance policy">
-                        </div><!-- /.portfolio-card__image -->
-                        <div class="portfolio-card__content">
-                            <div class="portfolio-card__head">
-                                <h6 class="portfolio-card__tagline">Strategy</h6>
-                                <h3 class="portfolio-card__title">
-                                    <a href="portfolio-details.html">Insurance policy</a>
-                                </h3><!-- /.portfolio-card__title -->
+                    <h3 class="sec-title__title">Latest news & articles <br> from the blog</h3><!-- /.sec-title__title -->
+                </div>
+                <div class="row gutter-y-40">
+                    @foreach(@$latestPosts as $index=>$post)
+                        <div class="col-md-6 col-lg-4">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
+                            <div class="blog-card__image-wrap">
+                                <div class="blog-card__image">
+                                    <img src="{{asset('/images/blog/thumb/thumb_'.@$post->image)}}" alt="">
+                                    <img src="{{asset('/images/blog/thumb/thumb_'.@$post->image)}}" alt="">
+                                    <a href="{{route('blog.single',$post->slug)}}" class="blog-card__image__link"><span class="sr-only">
+                                             {{ucfirst(@$post->title)}}</span>
+                                    </a>
+                                </div>
+                                <div class="blog-card__date"><span>{{date('d', strtotime($post->created_at))}}</span>
+                                    {{date('M Y', strtotime($post->created_at))}}</div>
                             </div>
-                            <a href="portfolio-details.html" class="portfolio-card__link">
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.portfolio-card__content -->
-                    </div><!-- /.portfolio-card -->
-                </div><!-- /.col-md-6 col-lg-4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="portfolio-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='1ms'>
-                        <div class="portfolio-card__image">
-                            <img src="assets/images/protfolio/portfolio-2.jpg" alt="Life protection">
-                        </div><!-- /.portfolio-card__image -->
-                        <div class="portfolio-card__content">
-                            <div class="portfolio-card__head">
-                                <h6 class="portfolio-card__tagline">Strategy</h6>
-                                <h3 class="portfolio-card__title">
-                                    <a href="portfolio-details.html">Life protection</a>
-                                </h3><!-- /.portfolio-card__title -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="{{route('blog.single',@$post->slug)}}">
+                                            <i class="fas fa-list-alt"></i>
+                                            {{ucfirst(@$post->category->name)}}</a></li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="{{route('blog.single',$post->slug)}}">
+                                        {{ucfirst(@$post->title)}} </a></h3>
+                                <a href="{{route('blog.single',$post->slug)}}" class="blog-card__link">
+                                    <span>Read more</span>
+                                    <i class="icon-right-arrow"></i>
+                                </a>
                             </div>
-                            <a href="portfolio-details.html" class="portfolio-card__link">
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.portfolio-card__content -->
-                    </div><!-- /.portfolio-card -->
-                </div><!-- /.col-md-6 col-lg-4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="portfolio-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='3ms'>
-                        <div class="portfolio-card__image">
-                            <img src="assets/images/protfolio/portfolio-3.jpg" alt="Insurance claims">
-                        </div><!-- /.portfolio-card__image -->
-                        <div class="portfolio-card__content">
-                            <div class="portfolio-card__head">
-                                <h6 class="portfolio-card__tagline">Strategy</h6>
-                                <h3 class="portfolio-card__title">
-                                    <a href="portfolio-details.html">Insurance claims</a>
-                                </h3><!-- /.portfolio-card__title -->
-                            </div>
-                            <a href="portfolio-details.html" class="portfolio-card__link">
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.portfolio-card__content -->
-                    </div><!-- /.portfolio-card -->
-                </div><!-- /.col-md-6 col-lg-4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="portfolio-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='4ms'>
-                        <div class="portfolio-card__image">
-                            <img src="assets/images/protfolio/portfolio-4.jpg" alt="Insurance policy">
-                        </div><!-- /.portfolio-card__image -->
-                        <div class="portfolio-card__content">
-                            <div class="portfolio-card__head">
-                                <h6 class="portfolio-card__tagline">Strategy</h6>
-                                <h3 class="portfolio-card__title">
-                                    <a href="portfolio-details.html">Insurance policy</a>
-                                </h3><!-- /.portfolio-card__title -->
-                            </div>
-                            <a href="portfolio-details.html" class="portfolio-card__link">
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.portfolio-card__content -->
-                    </div><!-- /.portfolio-card -->
-                </div><!-- /.col-md-6 col-lg-4 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.portfolio-page -->
-
-    <section class="blog-one blog-one--home">
-        <div class="container">
-            <div class="sec-title">
-
-                <h6 class="sec-title__tagline">recent news feed</h6><!-- /.sec-title__tagline -->
-
-                <h3 class="sec-title__title">Latest news & articles <br> from the blog</h3><!-- /.sec-title__title -->
-            </div><!-- /.sec-title -->
-            <div class="row gutter-y-40">
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
-                        <div class="blog-card__image-wrap">
-                            <div class="blog-card__image">
-                                <img src="assets/images/blog/blog-1-1.jpg" alt="The quality role of the life insurance new policies in company">
-                                <img src="assets/images/blog/blog-1-1.jpg" alt="The quality role of the life insurance new policies in company">
-                                <a href="blog-details-right.html" class="blog-card__image__link"><span class="sr-only">The quality role of the life insurance new policies in company</span>
-                                    <!-- /.sr-only --></a>
-                            </div>
-                            <div class="blog-card__date"><span>28</span>
-                                Nov</div><!-- /.blog-card__date -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">
-                                        <i class="fas fa-user-circle"></i>
-                                        by Admin</a></li>
-                                <li><a href="#">
-                                        <i class="fa fa-comments"></i>
-                                        2 Comments</a></li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">The quality role of the life insurance new policies in company</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__link">
-                                <span>Read more</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image-wrap">
-                            <div class="blog-card__image">
-                                <img src="assets/images/blog/blog-1-2.jpg" alt="In this space gain offline, but can we take this online">
-                                <img src="assets/images/blog/blog-1-2.jpg" alt="In this space gain offline, but can we take this online">
-                                <a href="blog-details-right.html" class="blog-card__image__link"><span class="sr-only">In this space gain offline, but can we take this online</span>
-                                    <!-- /.sr-only --></a>
-                            </div>
-                            <div class="blog-card__date"><span>28</span>
-                                Nov</div><!-- /.blog-card__date -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">
-                                        <i class="fas fa-user-circle"></i>
-                                        by Admin</a></li>
-                                <li><a href="#">
-                                        <i class="fa fa-comments"></i>
-                                        2 Comments</a></li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">In this space gain offline, but can we take this online</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__link">
-                                <span>Read more</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
-                        <div class="blog-card__image-wrap">
-                            <div class="blog-card__image">
-                                <img src="assets/images/blog/blog-1-3.jpg" alt="Flesh that out locked and loaded, closing these latest">
-                                <img src="assets/images/blog/blog-1-3.jpg" alt="Flesh that out locked and loaded, closing these latest">
-                                <a href="blog-details-right.html" class="blog-card__image__link"><span class="sr-only">Flesh that out locked and loaded, closing these latest</span>
-                                    <!-- /.sr-only --></a>
-                            </div>
-                            <div class="blog-card__date"><span>28</span>
-                                Nov</div><!-- /.blog-card__date -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">
-                                        <i class="fas fa-user-circle"></i>
-                                        by Admin</a></li>
-                                <li><a href="#">
-                                        <i class="fa fa-comments"></i>
-                                        2 Comments</a></li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">Flesh that out locked and loaded, closing these latest</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__link">
-                                <span>Read more</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.blog-one blog-one page -->
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 
     <div class="cta-one cta-one__home">
         <div class="container">
