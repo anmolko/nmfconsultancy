@@ -1519,7 +1519,7 @@ h6 {
 }
 
 .blog-three {
-  padding-top: 120px;
+  padding-top: 170px;
   padding-bottom: 120px;
   background-size: cover;
 }
@@ -4101,7 +4101,7 @@ body.megamenu-popup-active .mobile-nav__content {
 --------------------------------------------------------------*/
 .funfact-one {
   background-color: var(--nmf-primary, #2b2b5e);
-  padding-top: 80px;
+  /*padding-top: 80px;*/
   padding-bottom: 80px;
 }
 .funfact-one__item:hover .funfact-one__text {
@@ -8681,11 +8681,11 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 @media (min-width: 992px) {
   .about-one-home__shape {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    animation: treeMove infinite 8s;
+      display: block;
+      position: absolute;
+      left: -55px;
+      top: 720px;
+      animation: treeMove infinite 8s;
   }
 }
 @media (max-width: 767px) {
@@ -9437,9 +9437,10 @@ right: -27px;
   }
 }
 .about-three__counter__map {
-  position: absolute;
-  top: 0;
-  animation: round 5s infinite;
+    position: relative;
+    top: -750px;
+    right: 960px;
+    animation: round 5s infinite;
 }
 .about-three__counter__title {
   font-size: 16px;

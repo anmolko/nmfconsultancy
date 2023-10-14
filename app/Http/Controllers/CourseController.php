@@ -90,7 +90,7 @@ class CourseController extends Controller
                 $path          = base_path().'/public/images/course/';
                 $thumb_path    = base_path().'/public/images/course/thumb/';
                 $moved         = Image::make($image->getRealPath())->fit(775, 400)->orientate()->save($path.$name);
-                $thumb         = Image::make($image->getRealPath())->fit(896, 590)->orientate()->save($thumb_path.$thumb);
+                $thumb         = Image::make($image->getRealPath())->fit(370, 245)->orientate()->save($thumb_path.$thumb);
 
                 if ($moved && $thumb){
                     $data['image']= $name;
@@ -185,7 +185,7 @@ class CourseController extends Controller
                 $path                 = base_path().'/public/images/course/';
                 $thumb_path           = base_path().'/public/images/course/thumb/';
                 $moved                = Image::make($image->getRealPath())->fit(775, 400)->orientate()->save($path.$name);
-                $thumb                = Image::make($image->getRealPath())->fit(896, 590)->orientate()->save($thumb_path.$thumb);
+                $thumb                = Image::make($image->getRealPath())->fit(370, 245)->orientate()->save($thumb_path.$thumb);
 
                 if ($moved && $thumb){
                     $course->image = $name;

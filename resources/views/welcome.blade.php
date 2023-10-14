@@ -164,39 +164,217 @@
 
     @if(count($latestServices) > 0)
         <section class="service-one service-home-one pt-120 pb-120" style="background-image: url('{{ asset('assets/frontend/images/backgrounds/insurace-bg-1.jpg')  }}');">
-        <div class="container">
-            <div class="sec-title">
+            <div class="container">
+                <div class="sec-title">
 
-                <h6 class="sec-title__tagline">What we’re offering</h6><!-- /.sec-title__tagline -->
+                    <h6 class="sec-title__tagline">What we’re offering</h6><!-- /.sec-title__tagline -->
 
-                <h3 class="sec-title__title">We provide great categories<br> for you</h3><!-- /.sec-title__title -->
-            </div><!-- /.sec-title -->
-            <div class="row gutter-y-30">
-                @foreach(@$latestServices as $index=>$service)
-                    <div class="col-md-6 col-lg-3">
-                        <div class="portfolio-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
-                            <div class="portfolio-card__image">
-                                <img class="lazy" data-src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="">
-                            </div><!-- /.portfolio-card__image -->
-                            <div class="portfolio-card__content">
-                                <div class="portfolio-card__head">
-                                    <h6 class="portfolio-card__tagline"></h6>
-                                    <h3 class="portfolio-card__title">
-                                        <a href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a>
-                                    </h3><!-- /.portfolio-card__title -->
-                                </div>
-                                <a href="{{route('service.single',$service->slug)}}" class="portfolio-card__link">
-                                    <i class="icon-right-arrow"></i>
-                                </a><!-- /.blog-card__link -->
-                            </div><!-- /.portfolio-card__content -->
-                        </div><!-- /.portfolio-card -->
-                    </div>
-                @endforeach
-            </div>
+                    <h3 class="sec-title__title">We provide great categories<br> for you</h3><!-- /.sec-title__title -->
+                </div><!-- /.sec-title -->
+                <div class="row gutter-y-30">
+                    @foreach(@$latestServices as $index=>$service)
+                        <div class="col-md-6 col-lg-3">
+                            <div class="portfolio-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
+                                <div class="portfolio-card__image">
+                                    <img class="lazy" data-src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="">
+                                </div><!-- /.portfolio-card__image -->
+                                <div class="portfolio-card__content">
+                                    <div class="portfolio-card__head">
+                                        <h6 class="portfolio-card__tagline"></h6>
+                                        <h3 class="portfolio-card__title">
+                                            <a href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a>
+                                        </h3><!-- /.portfolio-card__title -->
+                                    </div>
+                                    <a href="{{route('service.single',$service->slug)}}" class="portfolio-card__link">
+                                        <i class="icon-right-arrow"></i>
+                                    </a><!-- /.blog-card__link -->
+                                </div><!-- /.portfolio-card__content -->
+                            </div><!-- /.portfolio-card -->
+                        </div>
+                    @endforeach
+                </div>
 
-        </div><!-- /.container -->
-    </section><!-- /.service-page -->
+            </div><!-- /.container -->
+        </section><!-- /.service-page -->
     @endif
+
+
+    @if(count($latestcourses) > 0)
+        <section class="service-one service-home-one pt-120 pb-120" style="background-image: url('{{asset('assets/frontend/images/backgrounds/insurace-bg-1.jpg')}}');">
+            <div class="container">
+                <div class="sec-title">
+                    <h6 class="sec-title__tagline">Start your journey</h6>
+                    <h3 class="sec-title__title">Study with our <br> amazing programme</h3>
+                </div>
+                <div class="row gutter-y-30">
+                    @foreach(@$latestcourses as $index=>$latest)
+                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                            <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
+                                <div class="service-card__image">
+                                    <img class="lazy" data-src="{{ @$latest->image ? asset('/images/course/thumb/thumb_'.@$latest->image):''}}" alt="">
+                                    <div class="service-card__icon">
+                                        <i class="icon-guarantee"></i>
+                                    </div>
+                                </div>
+                                <div class="service-card__content">
+                                    <h3 class="service-card__title">
+                                        <a href="{{ route('study-abroad.single', $latest->slug) }}">{{ $latest->title ?? '' }}</a>
+                                    </h3>
+                                    <p class="service-card__info"> {{ elipsis( strip_tags($latest->description ?? '') )}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    <div class="col-md-6 col-lg-4 align-items-stretch">
+                        <div class="service-card service-featured wow fadeInUp h-100" data-wow-duration="1500ms" data-wow-delay="8ms">
+                            <div class="service-card__bg" style="background-image: url('{{asset('assets/frontend/images/resources/service-featured.jpg')}}');"></div>
+                            <div class="service-card__content">
+                                <h3 class="service-card__title" style="margin-top: 40px">
+                                    We offer best courses <br> specially made <br> for your success
+                                </h3>
+                                <p class="service-card__info">Start learning and exploring right away.</p>
+                                <a href="{{ route('contact') }}" class="modins-btn">Get in touch <em></em></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if(!empty($homepage_info->why_heading))
+        <div class="about-three pt-120" style="position: relative;">
+            <div class="about-one-home__shape">
+                <img src="{{asset('assets/frontend/images/shapes/about-shape-1-3.png')}}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="about-three__left">
+                            <div class="about-one__content">
+                                <div class="sec-title">
+                                    <h6 class="sec-title__tagline">Why choose us</h6>
+                                    <h3 class="sec-title__title">{{ $homepage_info->why_heading ?? '' }}</h3>
+                                </div>
+                                <p class="about-one__text text-align-justify">{{ucfirst(@$homepage_info->why_description)}}</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="about-three__right">
+                            <div class="about-three__img-1">
+                                <div class="img">
+                                    <img class="lazy" data-src="{{ asset('/images/home/welcome/'.$homepage_info->what_image5) }}" alt="">
+                                </div>
+                                <div class="about-three__counter__map">
+                                    <img class="lazy" data-src="{{ asset('assets/frontend/images/shapes/map-shape.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="funfact-one funfact-two">
+            <div class="container">
+                <div class="list-unstyled funfact-one__list">
+                    <div class="funfact-two__lines">
+                        <img src="{{ asset('assets/frontend/images/shapes/line.png') }}" alt="">
+                        <img src="{{ asset('assets/frontend/images/shapes/line.png') }}" alt="">
+                        <img src="{{ asset('assets/frontend/images/shapes/line.png') }}" alt="">
+                        <img src="{{ asset('assets/frontend/images/shapes/line-4.png') }}" alt="">
+                    </div>
+                    <div class="row gutter-y-40">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="funfact-one__item count-box">
+                                <i class="icon-insurance"></i>
+                                <div class="funfact-one__content">
+                                    <div class="funfact-one__wrap">
+                                        <h3 class="funfact-one__count count-text" data-stop="{{ $homepage_info->project_completed }}" data-speed="1500">
+                                        </h3>
+                                        <h3 class="funfact-one__count count-before">+</h3>
+                                    </div>
+                                    <p class="funfact-one__text">Projects Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="funfact-one__item count-box">
+                                <i class="icon-group"></i>
+                                <div class="funfact-one__content">
+                                    <div class="funfact-one__wrap">
+                                        <h3 class="funfact-one__count count-text" data-stop="{{ $homepage_info->happy_clients }}" data-speed="1500"></h3>
+                                        <h3 class="funfact-one__count count-before">+</h3>
+                                    </div>
+                                    <p class="funfact-one__text">Happy Clients</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="funfact-one__item count-box">
+                                <i class="icon-life-insurance"></i>
+                                <div class="funfact-one__content">
+                                    <div class="funfact-one__wrap">
+                                        <h3 class="funfact-one__count count-text" data-stop="{{ $homepage_info->visa_approved }}" data-speed="1500">
+                                        </h3>
+                                        <h3 class="funfact-one__count count-before">+</h3>
+                                    </div>
+                                    <p class="funfact-one__text">Visa Approved</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="funfact-one__item count-box">
+                                <i class="icon-success"></i>
+                                <div class="funfact-one__content">
+                                    <div class="funfact-one__wrap">
+                                        <h3 class="funfact-one__count count-text" data-stop="{{ $homepage_info->success_stories }}" data-speed="1500"></h3>
+                                        <h3 class="funfact-one__count count-before">+</h3>
+                                    </div>
+                                    <p class="funfact-one__text">Success Stories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if(count($latesttests) > 0)
+        <div class="blog-three" style="margin-top: -120px;background-image: url('{{ asset('assets/frontend/images/pattern/blog-bg-3.jpg') }}');">
+            <div class="container">
+                <div class="blog-three__section_title d-flex justify-content-between align-items-center">
+                    <div class="sec-title">
+
+                        <h6 class="sec-title__tagline">Trainings and tests</h6>
+
+                        <h3 class="sec-title__title">et the best trainings <br> you deserve</h3>
+                    </div><!-- /.sec-title -->
+                    <div class="blog-three__btn">
+                        <a href="{{ route('test-preparation.list') }}" class="modins-btn">View All Tests <em></em></a>
+                    </div>
+                </div>
+                <div class="row gutter-y-30">
+                    @foreach(@$latesttests as $index=>$latest)
+                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                            <div class="blog-card-three">
+                                <img class="lazy" data-src="{{ @$latest->image ? asset('/images/test_preparation/thumb/thumb_'.@$latest->image):''}}" alt="">
+                                <div class="blog-card-three__content">
+                                    <h3 class="blog-card-three__title">
+                                        <a href="{{ route('test-preparation.single', $latest->slug) }}">{{ $latest->title ?? ''}}</a>
+                                    </h3>
+                                    <p>{{ elipsis( strip_tags($latest->summary ?? '') )}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endif
+
     <section class="testimonials-one testimonials-one--home">
         <div class="testimonials-one__bg">
             <img src="assets/images/shapes/testimonai-one-bg.png" alt="shape">
@@ -599,7 +777,7 @@
         </div>
     </div>
 
-    <section class="funfact-one" style="background-image: url(assets/images/shapes/funfact-shape.png);">
+    <section class="funfact-one" style="background-image: url('{{ asset('assets/frontend/images/shapes/funfact-shape.png') }}');">
         <div class="container">
             <div class="list-unstyled funfact-one__list">
                 <div class="row gutter-y-40">
