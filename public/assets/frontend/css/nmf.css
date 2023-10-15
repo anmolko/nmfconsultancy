@@ -10721,5 +10721,9 @@ body.boxed-wrapper .page-wrapper {
     top: 30px;
 }
 
+.sticky {
+    position: sticky;
+    top: calc(70px + 1.5rem);
+}
 
 /*# sourceMappingURL=nmf.css.map */

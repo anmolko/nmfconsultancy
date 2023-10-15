@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar stickthis">
     <aside class="widget-area">
         <div class="sidebar__single sidebar__search-wrap">
             <form action="{{route('searchBlog')}}" method="get" class="sidebar__search">
