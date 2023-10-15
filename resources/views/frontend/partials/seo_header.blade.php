@@ -77,11 +77,11 @@
                     </li>
                 </ul><!-- /.list-unstyled topbar-one__info -->
                 <div class="topbar-one__right">
-                    <ul class="topbar-one__menu">
-                        <li><a href="#">Make a Claim</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
+{{--                    <ul class="topbar-one__menu">--}}
+{{--                        <li><a href="#">Make a Claim</a></li>--}}
+{{--                        <li><a href="#">FAQs</a></li>--}}
+{{--                        <li><a href="#">Contact Us</a></li>--}}
+{{--                    </ul>--}}
                     <div class="topbar-one__social">
                         @if(@$setting_data->facebook)
                             <a href="{{ @$setting_data->facebook }}">
