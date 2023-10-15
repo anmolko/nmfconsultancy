@@ -207,7 +207,7 @@
                     <h3 class="sec-title__title">Study with our amazing <br> programme</h3>
                 </div>
                 <div class="row gutter-y-30 pt-20">
-                    @foreach(@$latestCourses as $index=>$latest)
+                    @foreach(@$latestcourses as $index=>$latest)
                         <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
                             <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
                                 <div class="service-card__image">

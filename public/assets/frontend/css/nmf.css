@@ -9791,7 +9791,7 @@ right: -27px;
   transform: scale(1);
 }
 .service-three-card__icon {
-  font-size: 32px;
+  font-size: 44px;
   width: 119px;
   height: 119px;
   line-height: 119px;
@@ -9833,14 +9833,14 @@ right: -27px;
 .service-three-card__content {
   position: relative;
   background-color: rgba(var(--modins-primary-rgb, 43, 43, 94), 0);
-  padding: 50px 30px;
+  padding: 30px;
   padding-top: 90px;
   margin-top: -60px;
   transition: 0.3s;
 }
 @media (min-width: 992px) {
   .service-three-card__content {
-    padding: 50px 40px;
+    padding: 30px;
     padding-top: 90px;
   }
 }
@@ -10761,5 +10761,9 @@ body.boxed-wrapper .page-wrapper {
 
 .about-us-radius{
     border-radius: 0 50% 50% 50%;
+}
+
+.sec-title-stand {
+    text-align: center;
 }
 /*# sourceMappingURL=nmf.css.map */

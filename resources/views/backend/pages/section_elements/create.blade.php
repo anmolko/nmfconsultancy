@@ -285,7 +285,7 @@
 
                                                  <div class="form-group mb-3">
                                                      <label>Description <span class="text-muted text-danger">*</span></label>
-                                                     <textarea class="form-control" maxlength="1400" rows="10" name="description" id="mapeditor" required>{{@$map_descp->description}}</textarea>
+                                                     <textarea class="form-control" maxlength="1350" rows="10" name="description" id="mapeditor" required>{{@$map_descp->description}}</textarea>
                                                      <div class="invalid-feedback">
                                                          Please enter the description.
                                                      </div>

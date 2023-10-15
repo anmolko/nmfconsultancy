@@ -181,13 +181,13 @@ if (!function_exists('get_icons')) {
     function get_icons($index){
         $icon   = '';
         if($index == 0){
-            $icon = 'flaticon-passport-3';
+            $icon = 'icon-online-registration';
         }else if($index == 1){
-            $icon = 'flaticon-office-building';
+            $icon = 'icon-employees';
         }else if($index == 2){
-            $icon = 'flaticon-coronavirus';
+            $icon = 'icon-guarantee';
         }else{
-            $icon = 'flaticon-customer-service';
+            $icon = 'icon-insurance';
         }
 
         return $icon;
