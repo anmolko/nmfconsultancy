@@ -9,85 +9,72 @@
 @endsection
 @section('content')
 
-    <div class="prt-titlebar-wrapper prt-bg">
-        <div class="prt-titlebar-wrapper-bg-layer prt-bg-layer"></div>
-        <div class="prt-titlebar-wrapper-inner">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="prt-page-title-row-heading">
-                            <div class="page-title-heading">
-                                <h2 class="title">Our Team</h2>
-                            </div>
-                            <div class="breadcrumb-wrapper">
-                                <i class="flaticon-home"></i>
-                                <span>
-                                        <a title="Homepage" href="/">Home</a>
-                                    </span>
-                                <div class="prt-sep"> - </div>
-                                <span>Teams</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="page-header">
+        <div class="page-header__bg"></div>
+        <div class="container">
+            <h2 class="page-header__title">Our Team</h2>
+            <ul class="modins-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li><span>Our Team</span></li>
+            </ul>
         </div>
-    </div>
+    </section>
 
-    <div class="site-main">
-
-        <!-- team-section -->
-        <section class="prt-row home02-team-section clearfix">
-            <div class="container">
-                <div class="row">
-                    @foreach($teams as $team)
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- featured-imagebox-team -->
-                        <div class="featured-imagebox featured-imagebox-team style1">
-                            <div class="featured-imagebox-inner">
-                                <div class="featured-thumbnail">
-                                    <img width="500" height="500" class="img-fluid" src="{{$team->image ? asset('/images/teams/'.$team->image ):''}}" alt="image">
-                                </div>
-                                <div class="featured-content">
-                                    <div class="featured-title">
-                                        <h3><a>{{ucfirst(@$team->name)}}</a></h3>
-                                        <span class="team-position">{{ucfirst(@$team->post)}}</span>
-                                    </div>
+    <section class="team-one team-one--page">
+        <div class="container">
+            <div class="row gutter-y-30">
+                @foreach($teams as $index=>$team)
+                    <div class="col-md-6 col-lg-4">
+                        <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='{{ $index }}00ms'>
+                            <div class="team-card__image">
+                                <img src="{{$team->image ? asset('/images/teams/'.$team->image ):''}}" alt="Adman michel">
+                                <div class="team-card__hover">
                                     @if(!empty(@$team->fb) || !empty(@$team->twitter) || !empty(@$team->linkedin) || !empty(@$team->insta))
-                                        <div class="prt-media-link">
-                                            <div class="media-block">
-                                                <div class="media-btn">
-                                                    <i class="icon-share"></i>
-                                                </div>
-                                                <ul class="social-icons list-inline d-flex">
-                                                    @if(!empty(@$team->fb))
-                                                        <li class="social-facebook"><a href="{{ $team->fb }}"><i class="icon-facebook"></i></a></li>
-                                                    @endif
-                                                    @if(!empty(@$team->twitter))
-                                                        <li class="social-twitter"><a href="{{ $team->twitter }}"><i class="icon-twitter"></i></a></li>
-                                                    @endif
-                                                    @if(!empty(@$team->linkedin))
-                                                        <li class="social-linkedin"><a href="{{ $team->linkedin }}"><i class="icon-linkedin"></i></a></li>
-                                                    @endif
-                                                    @if(!empty(@$team->insta))
-                                                        <li class="social-instagram"><a href="{{ $team->insta }}"><i class="icon-instagram"></i></a></li>
-                                                    @endif
-
-                                                </ul>
+                                        <div class="team-card__social">
+                                            <i class="fa fa-share-alt"></i>
+                                            <div class="list-unstyled team-card__social__list">
+                                                @if(!empty(@$team->fb))
+                                                    <a href="{{ $team->fb }}">
+                                                        <i class="fab fa-facebook" aria-hidden="true"></i>
+                                                        <span class="sr-only">Facebook</span>
+                                                    </a>
+                                                @endif
+                                                @if(!empty(@$team->twitter))
+                                                    <a href="{{ $team->twitter }}">
+                                                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                                                        <span class="sr-only">Twitter</span>
+                                                    </a>
+                                                @endif
+                                                @if(!empty(@$team->linkedin))
+                                                    <a href="{{ $team->linkedin }}">
+                                                        <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+                                                        <span class="sr-only">Pinterest</span>
+                                                    </a>
+                                                @endif
+                                                @if(!empty(@$team->insta))
+                                                    <a href="{{ $team->insta }}">
+                                                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                                                        <span class="sr-only">Instagram</span>
+                                                    </a>
+                                                @endif
                                             </div>
                                         </div>
                                     @endif
-                                </div>
-                            </div>
-                        </div><!-- featured-imagebox-team end-->
+                                </div><!-- /.team-card__hover -->
+                            </div><!-- /.team-card__image -->
+                            <div class="team-card__content">
+                                <h3 class="team-card__title">
+                                    <a >{{ucfirst(@$team->name)}}</a>
+                                </h3><!-- /.team-card__title -->
+                                <h6 class="team-card__designation">{{ucfirst(@$team->post)}}</h6><!-- /.team-card__designation -->
+                            </div><!-- /.team-card__content -->
+                            <div class="team-card__bg"></div><!-- /.team-card__image__bg -->
+                        </div><!-- /.team-card -->
                     </div>
-                    @endforeach
-                </div>
+                @endforeach
             </div>
-        </section>
-        <!-- team-section-end -->
-    </div>
-
+        </div>
+    </section>
 @endsection
 @section('js')
 @endsection

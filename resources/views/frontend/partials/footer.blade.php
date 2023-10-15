@@ -7,7 +7,7 @@
         <img src="{{asset('assets/frontend/images/shapes/footer-shape-2.png')}}" alt="footer shape">
     </div>
     <!-- /.main-footer__bg -->
-    <div class="main-footer__top">
+    <div class="main-footer__top" style="padding-top : {{  Request::is('/') ? '120px':'80px' }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-xl-3">

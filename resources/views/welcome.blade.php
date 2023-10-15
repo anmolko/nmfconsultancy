@@ -507,9 +507,9 @@
                 }
             }'>
                     @foreach($testimonials as $testimonial)
-                        <div class="item">
+                        <div class="item align-items-stretch d-flex">
                             <div class="testimonials-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                                <div class="testimonials-card__inner">
+                                <div class="testimonials-card__inner h-100">
                                     <div class="shape-one"><img src="{{ asset('assets/frontend/images/shapes/testi-shape-one.png') }}" alt="shape"></div>
                                     <div class="testimonials-card__top">
                                         <div class="testimonials-card__image">
