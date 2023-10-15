@@ -10630,5 +10630,96 @@ body.boxed-wrapper .page-wrapper {
     text-align: justify;
 }
 
+.thumbnail{
+    object-fit: cover;
+    height: 80px;
+    width: 80px;
+}
+.pagination li{
+    margin-right: 5px;
+}
+.pagination-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d3d73;
+    font-size: 14px;
+    color:  #fff;
+    transition: all 500ms ease;
+    border-radius: 50%;
+}
+
+.pagination-link.current{
+    background-color: #dfdfe5;
+    color: #3d3d73;
+}
+
+.pagination-link:hover {
+    background-color: var(--nmf-base, #00cde5);
+    color: var(--nmf-white, #fff);
+}
+
+.custom-description ul, .custom-description ol{
+    padding-left: 0;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    list-style: none;
+}
+.custom-description ul li, .custom-description ol li{
+    color: var(--nmf-primary);
+    position: relative;
+    padding-left: 35px;
+    line-height: 30px;
+}
+.custom-description ul li:before, .custom-description ol li:before{
+    color: var(--nmf-base);
+    position: absolute;
+    left: 0;
+    top: 7px;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f0a9";
+}
+.custom-description ul li:before{
+    content: "\f00c";
+}
+.custom-description ol li:before{
+    content: "\f0a9";
+}
+.custom-description h1, h2, h3, h4, h5, h6{
+    color: var(--nmf-primary, #2b2b5e);
+}
+.custom-description blockquote{
+    padding: 10px 40px;
+    background-color: #f4f3f8;
+    color: var(--nmf-primary, #2b2b5e);
+}
+.custom-description blockquote p{
+    margin-left: 35px;
+    padding-bottom: 10px;
+}
+.custom-description blockquote:before{
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f10d";
+    font-size: 30px;
+    position: relative;
+    top: 30px;
+}
+
 
 /*# sourceMappingURL=nmf.css.map */

@@ -445,7 +445,7 @@ class FrontController extends Controller
     }
 
     public function team(){
-        $teams = Team::orderBy('order', 'asc')->paginate(12);
+        $teams = Team::orderBy('order', 'asc')->paginate(8);
         return view('frontend.pages.team',compact('teams'));
     }
 

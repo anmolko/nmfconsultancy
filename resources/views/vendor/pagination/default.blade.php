@@ -8,17 +8,17 @@
     @if ($paginator->onFirstPage())
 
         <li class="page-item disabled d-none">
-            <a href="{{ $paginator->previousPageUrl() }}" class="page-link"><i class="fas fa-angle-left"></i></a>
+            <a href="{{ $paginator->previousPageUrl() }}" class="pagination-link page-link"><i class="fas fa-angle-left"></i></a>
         </li>
     @else
     <li class="nav-link">
-            <a href="{{ $paginator->previousPageUrl() }}" class="white-color page-numbers"><i class="fas fa-angle-left"></i></a>
+            <a href="{{ $paginator->previousPageUrl() }}" class="pagination-link page-numbers"><i class="fas fa-angle-left"></i></a>
         </li>
     @endif
 
     @if($paginator->currentPage() > 3)
 
-    <li class="nav-link"><a class="page-numbers current" href="{{ $paginator->url(1) }}"> 1</a></li>
+    <li class="nav-link"><a class="pagination-link page-numbers current" href="{{ $paginator->url(1) }}"> 1</a></li>
     @endif
 
     @if($paginator->currentPage() > 4)
@@ -31,13 +31,13 @@
             @if ($i == $paginator->currentPage())
 
                 <li class="nav-link active">
-                    <span class="page-numbers current">
+                    <span class="pagination-link page-numbers current">
                     {{ $i }}
                         <span class="sr-only">(current)</span>
                     </span>
                 </li>
             @else
-                <li class="nav-link "><a class="white-color page-numbers" href="{{ $paginator->url($i) }}"> {{ $i }}</a></li>
+                <li class="nav-link "><a class="pagination-link page-numbers" href="{{ $paginator->url($i) }}"> {{ $i }}</a></li>
             @endif
         @endif
     @endforeach
@@ -47,7 +47,7 @@
     @endif
 
     @if($paginator->currentPage() < $paginator->lastPage() - 2)
-        <li class="nav-link"><a class="white-color page-numbers" href="{{ $paginator->url($paginator->lastPage()) }}">{{ $paginator->lastPage() }}</a></li>
+        <li class="nav-link"><a class="pagination-link white-color page-numbers" href="{{ $paginator->url($paginator->lastPage()) }}">{{ $paginator->lastPage() }}</a></li>
 
     @endif
 
@@ -55,7 +55,7 @@
     @if ($paginator->hasMorePages())
 
     <li class="nav-link">
-        <a class="white-color page-numbers" href="{{ $paginator->nextPageUrl() }}"><i class="fas fa-angle-right"></i></a>
+        <a class="pagination-link white-color page-numbers" href="{{ $paginator->nextPageUrl() }}"><i class="fas fa-angle-right"></i></a>
     </li>
     @else
 

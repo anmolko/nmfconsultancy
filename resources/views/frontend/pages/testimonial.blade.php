@@ -41,6 +41,10 @@
                         </div>
                     </div>
                 @endforeach
+
+                <div class="pagination-block">
+                    {{ $testimonials->links('vendor.pagination.default') }}
+                </div>
             </div>
 
         </div>

@@ -72,6 +72,10 @@
                         </div><!-- /.team-card -->
                     </div>
                 @endforeach
+
+                <div class="pagination-block">
+                    {{ $teams->links('vendor.pagination.default') }}
+                </div>
             </div>
         </div>
     </section>

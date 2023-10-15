@@ -1,38 +1,40 @@
-<div class="prt-blog-sidebar-content">
-    <aside class="widget widget-search with-title">
-        <h3 class="widget-title">Search</h3>
-        <form role="search" method="get" class="search-form" action="{{route('searchBlog')}}">
-            <label>
-                <span class="screen-reader-text">Search for:</span>
-                <input type="search" class="input-text" placeholder="Search …" value="" name="s"   oninvalid="this.setCustomValidity('Type a keyword')" oninput="this.setCustomValidity('')" required>
-            </label>
-            <button class="btn prt-btn prt-btn-size-md prt-btn-shape-square prt-btn-style-fill prt-btn-color-skin" type="submit"></button>
-        </form>
-    </aside>
-    <aside class="widget widget-categories with-title">
-        <h3 class="widget-title">Categories</h3>
-        <ul>
-            @foreach(@$bcategories as $bcategory)
-                <li><a href="{{route('blog.category',$bcategory->slug)}}">{{ucwords(@$bcategory->name)}} ({{$bcategory->blogs->count()}})</a></li>
-            @endforeach
-        </ul>
-    </aside>
-    <aside class="widget widget-recent-post with-title">
-        <h3 class="widget-title">Latest Posts</h3>
-        <ul class="widget-post prt-recent-post-list">
-            @foreach($latestPosts as $index => $latest)
-                <li>
-                    <div class="post-img">
-                        <img width="80" height="80" class="lazy" data-src="{{(@$latest->image) ? asset('/images/blog/thumb/thumb_'.@$latest->image):''}}"  alt="">
+<div class="sidebar">
+    <aside class="widget-area">
+        <div class="sidebar__single sidebar__search-wrap">
+            <form action="{{route('searchBlog')}}" method="get" class="sidebar__search">
+                <input type="text" id="search" placeholder="Search Here..." name="s"   oninvalid="this.setCustomValidity('Type a keyword')" oninput="this.setCustomValidity('')" required/>
+                <button type="submit" aria-label="search submit">
+                    <span><i class="icon-magnifying-glass"></i></span>
+                </button>
+            </form>
+        </div>
+        <div class="sidebar__single">
+            <h4 class="sidebar__title">Latest posts</h4>
+            <ul class="sidebar__posts list-unstyled">
+                @foreach($latestPosts as $index => $latest)
+                    <li class="sidebar__posts__item">
+                    <div class="sidebar__posts__image">
+                        <img class="thumbnail lazy" data-src="{{(@$latest->image) ? asset('/images/blog/thumb/thumb_'.@$latest->image):''}}"  alt="">
                     </div>
-                    <div class="post-detail">
-                        <span class="post-date">{{date('d M Y', strtotime($latest->created_at))}}</span>
-                        <a href="{{route('blog.category',$bcategory->slug)}}">
-                            {{ucwords(@$latest->title)}}
-                        </a>
+                    <div class="sidebar__posts__content">
+                        <p class="sidebar__posts__meta"><a href="{{route('blog.single',$latest->slug)}}">
+                                <i class="fa fa-calendar-alt"></i>
+                                {{date('d M Y', strtotime($latest->created_at))}}</a></p>
+                        <h4 class="sidebar__posts__title"><a href="{{route('blog.single',$latest->slug)}}">
+                                {{ucwords(@$latest->title)}}
+                            </a></h4>
                     </div>
                 </li>
-            @endforeach
-        </ul>
+                @endforeach
+            </ul>
+        </div>
+        <div class="sidebar__single">
+            <h4 class="sidebar__title">Categories</h4><!-- /.sidebar__title -->
+            <ul class="sidebar__categories list-unstyled">
+                @foreach(@$bcategories as $bcategory)
+                    <li><a href="{{route('blog.category',$bcategory->slug)}}">{{ucwords(@$bcategory->name)}} ({{$bcategory->blogs->count()}})</a></li>
+                @endforeach
+            </ul>
+        </div>
     </aside>
 </div>
