@@ -1,12 +1,13 @@
 <div class="service-sidebar">
-
-    <div class="service-sidebar__single">
-        <ul class="list-unstyled service-sidebar__nav">
-            @foreach($latestServices as $index => $latest)
-                <li><a href="{{route('service.single',$latest->slug)}}">{{ $latest->title ?? '' }}</a></li>
-            @endforeach`
-        </ul>
-    </div>
+    @if(count($latestServices)>0)
+        <div class="service-sidebar__single">
+            <ul class="list-unstyled service-sidebar__nav">
+                @foreach($latestServices as $index => $latest)
+                    <li><a href="{{route('service.single',$latest->slug)}}">{{ $latest->title ?? '' }}</a></li>
+                @endforeach`
+            </ul>
+        </div>
+    @endif
 
     <div class="service-sidebar__single ">
         <div class="service-sidebar__contact background-base text-center" style="background-image: url( '{{ asset('assets/frontend/images/service/sidebar-service-bg.jpg') }}');">

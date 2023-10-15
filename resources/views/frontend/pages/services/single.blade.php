@@ -60,7 +60,7 @@
                 <div class="col-md-12 col-lg-8">
                     <div class="service-details__content">
                         <div class="service-details__thumbnail">
-                            <img src="{{asset('/images/service/'.@$singleService->banner_image)}}" alt="Car insurance">
+                            <img class="lazy" data-src="{{asset('/images/service/'.@$singleService->banner_image)}}" alt="">
                         </div>
                         <h3 class="service-details__title">{{ ucwords(@$singleService->title) }}</h3>
                         <div class="service-details__text custom-description text-align-justify"> {!! @$singleService->description ?? ''!!}</div>
