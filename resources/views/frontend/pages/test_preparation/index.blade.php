@@ -11,73 +11,48 @@
 @endsection
 @section('content')
 
-    <div class="prt-titlebar-wrapper prt-bg">
-        <div class="prt-titlebar-wrapper-bg-layer prt-bg-layer"></div>
-        <div class="prt-titlebar-wrapper-inner">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="prt-page-title-row-heading">
-                            <div class="page-title-heading">
-                                <h2 class="title">Test Preparation</h2>
+    <section class="page-header">
+        <div class="page-header__bg"></div>
+        <div class="container">
+            <h2 class="page-header__title">Test Preparation</h2>
+            <ul class="modins-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li><span>Test Preparation</span></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="service-details" style="background-image: url('{{ asset('assets/frontend/images/pattern/blog-bg-3.jpg') }}');">
+        <div class="container">
+            <div class="row gutter-y-30">
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                        @foreach(@$rows as $index=>$latest)
+                            <div class="col-md-6 col-lg-6 d-flex align-items-stretch">
+                                <div class="blog-card-three">
+                                    <img class="lazy" data-src="{{ @$latest->image ? asset('/images/test_preparation/thumb/thumb_'.@$latest->image):''}}" alt="">
+                                    <div class="blog-card-three__content">
+                                        <h3 class="blog-card-three__title">
+                                            <a href="{{ route('test-preparation.single', $latest->slug) }}">{{ $latest->title ?? ''}}</a>
+                                        </h3>
+                                        <p>{{ elipsis( strip_tags($latest->summary ?? '') )}}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="breadcrumb-wrapper">
-                                <i class="flaticon-home"></i>
-                                <span>
-                                        <a title="Homepage" href="/">Home</a>
-                                    </span>
-                                <div class="prt-sep"> - </div>
-                                <span>Test Preparation</span>
-                            </div>
+                        @endforeach
+
+                        <div class="pagination-block">
+                            {{ $rows->links('vendor.pagination.default') }}
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12 col-lg-4">
+                    @include('frontend.pages.test_preparation.sidebar')
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!--site-main start-->
-    <div class="site-main">
 
-        <!--sidebar-->
-        <div class="sidebar prt-sidebar-left prt-blog bg-base-grey clearfix">
-            <div class="container">
-                <!-- row -->
-                <div class="row g-0">
-                    <div class="col-lg-4 widget-area sidebar-left">
-                        @include('frontend.pages.test_preparation.sidebar')
-                    </div>
-                    <div class="col-lg-8 content-area prt-blog-single">
-                        <div class="row">
-                            @foreach(@$rows as $index=>$latest)
-                                <div class="col-lg-6 col-md-6">
-                                    <!-- featured-imagebox -->
-                                    <div class="featured-imagebox featured-imagebox-tab">
-                                        <div class="featured-thumbnail">
-                                            <img class="img-fluid lazy" width="656" height="484" data-src="{{ @$latest->image ? asset('/images/test_preparation/thumb/thumb_'.@$latest->image):''}}" alt="">
-                                        </div>
-                                        <div class="featured-content" style="background-color: #fff;height: 155px;">
-                                            <div class="featured-title">
-                                                <h3><a href="{{ route('test-preparation.single', $latest->slug) }}">  {{ $latest->title }}</a></h3>
-                                            </div>
-                                            <div class="featured-desc text-justify">
-                                                <p>
-                                                    {{ elipsis( strip_tags($latest->summary ?? '') )}}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div><!-- featured-imagebox end-->
-                                </div>
-                            @endforeach
-                            <div class="pagination-block">
-                                {{ $rows->links('vendor.pagination.default') }}
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!-- row end -->
-            </div>
-        </div>
-        <!--sidebar end-->
-    </div><!-- site-main end-->
 @endsection

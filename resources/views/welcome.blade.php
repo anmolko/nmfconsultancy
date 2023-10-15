@@ -580,24 +580,24 @@
         </section>
     @endif
 
-    <div class="cta-one cta-one__home">
-        <div class="container">
-            <div class="cta-one__inner">
-                <div class="cta-one__headline">
-                    <div class="cta-one__icon">
-                        <i class="icon-folder"></i>
-                    </div>
-                    <div class="cta-one__content">
-                        <span class="cta-one__tagline">Quisque vel ortor</span>
-                        <h3 class="cta-one__title">Start reporting or tracking your claims</h3>
-                    </div>
-                </div>
-                <div class="cta-one__btn">
-                    <a href="contact.html" class="modins-btn modins-btn-white">Track your Claim <em></em></a>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="cta-one cta-one__home">--}}
+{{--        <div class="container">--}}
+{{--            <div class="cta-one__inner">--}}
+{{--                <div class="cta-one__headline">--}}
+{{--                    <div class="cta-one__icon">--}}
+{{--                        <i class="icon-folder"></i>--}}
+{{--                    </div>--}}
+{{--                    <div class="cta-one__content">--}}
+{{--                        <span class="cta-one__tagline">Quisque vel ortor</span>--}}
+{{--                        <h3 class="cta-one__title">Start reporting or tracking your claims</h3>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="cta-one__btn">--}}
+{{--                    <a href="contact.html" class="modins-btn modins-btn-white">Track your Claim <em></em></a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 @endsection
 @section('js')
