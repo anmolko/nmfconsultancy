@@ -483,7 +483,7 @@ class FrontController extends Controller
 
     public function studyAbroadSingle($slug){
         $row                = Course::where('slug', $slug)->first();
-        $latestCourses      = Course::orderBy('created_at', 'DESC')->where('status','publish')->whereNotIn('id',[$row->id])->take(4)->get();
+        $latestCourses      = Course::orderBy('created_at', 'DESC')->where('status','publish')->whereNotIn('id',[$row->id])->take(6)->get();
 
         return view('frontend.pages.course.single',compact('row','latestCourses'));
     }

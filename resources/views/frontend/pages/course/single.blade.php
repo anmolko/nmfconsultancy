@@ -2,22 +2,24 @@
 @section('css')
     <style>
 
-    .custom-editor .media{
-        display: block;
-    }
+        /* Style the tab buttons */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
 
-    .custom-editor{
-        font-size: 1.1875rem;
-    }
-    .canosoft-listing ul,.canosoft-listing ol {
-        padding: 0;
-        margin-left: 15px;
-    }
-		.home-one a.active {
-		color: #fc653c !important;
-	}
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+        }
+
+        .active{
+            display: inline;
+        }
 
     </style>
+
 @endsection
 @section('seo')
     <title>{{ucfirst(@$row->title)}} | {{ucwords(@$row->website_name ?? '')}}   </title>
@@ -39,118 +41,120 @@
 
 @section('content')
 
-    <div class="prt-titlebar-wrapper prt-bg">
-        <div class="prt-titlebar-wrapper-bg-layer prt-bg-layer"></div>
-        <div class="prt-titlebar-wrapper-inner">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="prt-page-title-row-heading">
-                            <div class="page-title-heading">
-                                <h2 class="title">{{ $row->title }}</h2>
-                            </div>
-                            <div class="breadcrumb-wrapper">
-                                <i class="flaticon-home"></i>
-                                <span>
-                                        <a title="Homepage" href="/">Home</a>
-                                    </span>
-                                <div class="prt-sep"> - </div>
-                                <span>Course details</span>
+    <section class="page-header">
+        <div class="page-header__bg"></div>
+        <div class="container">
+            <h2 class="page-header__title">{{ $row->title }}</h2>
+            <ul class="modins-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ route('study-abroad.list') }}">Course</a></li>
+                <li><span>Course details</span></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="portfolio-details">
+        <div class="container">
+            <div class="row">
+                <div class="portfolio-details__img">
+                    <img class="lazy" data-src="{{ @$row->image ? asset('/images/course/'.@$row->image):''}}" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="portfolio-details__content">
+                        <div class="toolbar mb2 mt2">
+                            @if($row->description)
+                                <button class="btn-filter tablinks active" id="description">Description</button>
+                            @endif
+                            @if($row->courseDescription)
+                                @foreach($row->courseDescription as $index=>$detail)
+                                        <button class="btn-filter tablinks" id="{{ str_replace(' ','-',$detail->title) }}">{{ $detail->title }}</button>
+                                @endforeach
+                            @endif
+                        </div>
+
+                        <div class="tabcontent custom-description text-align-justify Tab1 active">
+                            {!! $row->description ?? '' !!}
+                        </div>
+
+                        @if($row->courseDescription)
+                            @foreach($row->courseDescription as $index=>$detail)
+                                @include('frontend.pages.course.includes.course_description')
+                            @endforeach
+                        @endif
+
+                        <div class="blog-details__meta" style="    border-top: 1px solid var(--nmf-border-color, #e0ddea);">
+                            <h4 class="blog-details__tags__title">Share</h4>
+                            <div class="blog-details__social">
+                                <a href="#" tabindex="0" rel="noopener" aria-label="facebook"><i onclick='fbShare("{{route('study-abroad.single',$row->slug)}}")' class="fab fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#" tabindex="0" rel="noopener" aria-label="twitter"><i onclick='twitShare("{{route('study-abroad.single',$row->slug)}}","{{ $row->title }}")' class="fab fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#" tabindex="0" rel="noopener" aria-label="pinterest"><i onclick='whatsappShare("{{route('study-abroad.single',$row->slug)}}","{{ $row->title }}")' class="fab fa-whatsapp" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div><!-- /.container -->
+    </section><!-- /.portfolio-details -->
 
-    <div class="site-main">
+    <section class="portfolio-carousel pt-100 pb-100" style="    margin-bottom: 60px;background-image: url('{{ asset('assets/frontend/images/pattern/blog-bg-3.jpg') }}');">
+        <div class="container">
+            <div class="portfolio-carousel__title text-center">
+                <div class="sec-title">
 
-        <!--sidebar-->
-        <div class="sidebar prt-sidebar-right prt-blog bg-base-grey clearfix">
-            <div class="container">
-                <!-- row -->
-                <div class="row g-0">
-                    <div class="col-lg-8 content-area prt-blog-single">
-                        <div class="prt-blog-single-content">
-                            <div class="prt_single_image-wrapper">
-                                <img class="img-fluid lazy" width="1200" height="720" data-src="{{ @$row->image ? asset('/images/course/'.@$row->image):''}}" alt="">
-                            </div>
-                            <div class="entry-content">
-                                <div class="prt-box-desc-text">
-                                    <h3 class="comment-reply-title">{{ $row->title }}</h3>
-                                    <div class="row mt-40">
-                                        <div class="col-lg-12">
-                                            <div class="prt-tabs style3 clearfix">
-                                                <ul class="tabs">
-                                                    @if($row->description)
-                                                        <li class="tab active d-flex align-items-stretch"><a href="#">Description</a></li>
-                                                    @endif
+                    <h6 class="sec-title__tagline">Recent Courses</h6><!-- /.sec-title__tagline -->
 
-                                                    @if($row->courseDescription)
-                                                        @foreach($row->courseDescription as $index=>$detail)
-                                                                <li class="tab d-flex align-items-stretch"><a href="#">{{ $detail->title }}</a></li>
-                                                            @endforeach
-                                                    @endif
-                                                </ul>
-                                                <div class="content-tab bg-base-white">
-                                                    <div class="content-inner">
-                                                        <div class="row g-0">
-                                                            <div class="col-xl-12 col-lg-6 col-md-12">
-                                                                <div class="pl-15 res-991-pl-0 res-991-pt-30 text-start custom-description text-justify">
-                                                                    {!! $row->description ?? '' !!}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    @if($row->courseDescription)
-                                                        @foreach($row->courseDescription as $index=>$detail)
-                                                            @include('frontend.pages.course.includes.course_description')
-                                                        @endforeach
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="blog-tag-and-media-block">
-{{--                                        <div class="social-media-block">--}}
-{{--                                            <div class="prt_tag_lists">--}}
-{{--                                                <span class="prt-tags-links-title">Category:</span>--}}
-{{--                                                <span class="prt-tags-links">--}}
-{{--                                                        <a href="{{route('blog.category',$singleBlog->category->slug)}}">{{@$singleBlog->category->name }}</a>--}}
-{{--                                                </span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-                                        <div class="prt-social-share-wrapper align-self-center res-575-mt-15">
-                                            <ul class="social-icons square">
-                                                <li class="social-facebook">
-                                                    <a href="#" tabindex="0" rel="noopener" aria-label="facebook"><i onclick='fbShare("{{route('study-abroad.single',$row->slug)}}")' class="fab fa-facebook" aria-hidden="true"></i></a>
-                                                </li>
-                                                <li class="social-twitter">
-                                                    <a href="#" tabindex="0" rel="noopener" aria-label="twitter"><i onclick='twitShare("{{route('study-abroad.single',$row->slug)}}","{{ $row->title }}")' class="fab fa-twitter" aria-hidden="true"></i></a>
-                                                </li>
-                                                <li class="social-pinterest">
-                                                    <a href="#" tabindex="0" rel="noopener" aria-label="pinterest"><i onclick='whatsappShare("{{route('study-abroad.single',$row->slug)}}","{{ $row->title }}")' class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                    <h3 class="sec-title__title">View our catalogue</h3><!-- /.sec-title__title -->
+                </div><!-- /.sec-title -->
+            </div>
+            <div class="portfolio-page__carousel modins-owl__carousel modins-owl__carousel--with-shadow modins-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
+			"items": 1,
+			"margin": 0,
+			"loop": true,
+			"smartSpeed": 700,
+			"nav": false,
+			"navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+			"dots": false,
+			"autoplay": true,
+			"responsive": {
+				"0": {
+					"items": 1
+				},
+				"576": {
+					"items": 2,
+					"margin": 30
+				},
+				"992": {
+					"items": 3,
+					"margin": 30
+				}
+			}
+		}'>
+                @foreach(@$latestCourses as $index=>$latest)
+                    <div class="item ">
+                        <div class="col-md-12 col-lg-12 d-flex align-items-stretch">
+                            <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
+                            <div class="service-card__image">
+                                <img src="{{ @$latest->image ? asset('/images/course/thumb/thumb_'.@$latest->image):''}}" alt="">
+                                <div class="service-card__icon">
+                                    <i class="icon-guarantee"></i>
                                 </div>
                             </div>
+                            <div class="service-card__content">
+                                <h3 class="service-card__title">
+                                    <a href="{{ route('study-abroad.single', $latest->slug) }}">{{ $latest->title ?? '' }}</a>
+                                </h3>
+                                <p class="service-card__info"> {{ elipsis( strip_tags($latest->description ?? '') )}}</p>
+                            </div>
+                        </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 widget-area sidebar-right">
-                        @include('frontend.pages.course.sidebar')
-                    </div>
-                </div><!-- row end -->
+                @endforeach
             </div>
         </div>
-        <!--sidebar end-->
-
-    </div><!-- site-main end-->
-
+    </section>
 @endsection
 @section('js')
 <script>
@@ -171,4 +175,18 @@
         }
     });
 </script>
+<script>
+    $(document).ready(function(){
+        $('.tablinks').click(function(){
+            var tab_id = $(this).attr('id');
+            console.log(tab_id);
+            $('.tabcontent').removeClass('active');
+            $('.' + tab_id).addClass('active');
+
+            $('.tablinks').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+</script>
+
 @endsection

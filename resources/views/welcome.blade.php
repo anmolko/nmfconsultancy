@@ -207,7 +207,7 @@
                     <h3 class="sec-title__title">Study with our amazing <br> programme</h3>
                 </div>
                 <div class="row gutter-y-30 pt-20">
-                    @foreach(@$latestcourses as $index=>$latest)
+                    @foreach(@$latestCourses as $index=>$latest)
                         <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
                             <div class="service-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='0ms'>
                                 <div class="service-card__image">
@@ -233,7 +233,7 @@
                                     We offer best courses <br> specially made <br> for your success
                                 </h3>
                                 <p class="service-card__info">Start learning and exploring right away.</p>
-                                <a href="{{ route('contact') }}" class="modins-btn">Get in touch <em></em></a>
+                                <a href="{{ route('study-abroad.list') }}" class="modins-btn">View All <em></em></a>
                             </div>
                         </div>
                     </div>
