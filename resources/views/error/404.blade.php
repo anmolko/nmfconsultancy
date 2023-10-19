@@ -2,33 +2,31 @@
 @section('title')  Page Not Found @endsection
 @section('content')
 
-    <div class="site-main">
 
-        <!--error-404-->
-        <section class="error-404">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 res-991-mt-30 order-last order-lg-first">
-                        <div class="text-center text-lg-start">
-                            <div class="page-content">
-                                <h2>Error</h2>
-                                <h3><span>Opps!</span> Somethings gone missing</h3>
-                                <p>Sorry, This page may has been moved,deleted or maybe you just mis-typed the URL.</p>
-                            </div>
-                            <div class="">
-                                <a class="prt-btn prt-btn-size-md prt-btn-shape-round prt-btn-style-fill prt-btn-color-skincolor" href="/">Go To Home Pages</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="prt-404-img text-center text-lg-start">
-                            <img width="701" height="258" class="img-fluid" src="{{asset('assets/frontend/images/error.png')}}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--error-404 end-->
+    <section class="page-header">
+        <div class="page-header__bg"></div>
+        <div class="container">
+            <h2 class="page-header__title">404 Error</h2>
+            <ul class="modins-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li><span>404 Error</span></li>
+            </ul>
+        </div>
+    </section>
 
-    </div>
+
+    <section class="error-404">
+        <div class="container">
+            <h2 class="error-404__title wow fadeInUp" data-wow-duration="1500ms">
+                4<span>0</span>4
+            </h2><!-- /.error-404__title -->
+            <h3 class="error-404__sub-title">Oops! page not found</h3><!-- /.error-404__title -->
+            <p class="error-404__text">The page you are looking for does not exist.</p><!-- /.error-404__text -->
+            <div class="error-404__btns">
+                <a href="/" class="modins-btn modins-btn--base error-404__btn"><span>back to home</span>
+                    <em></em></a>
+            </div><!-- /.error-404__btns -->
+        </div><!-- /.container -->
+    </section><!-- /.error-404 -->
+
 @endsection
